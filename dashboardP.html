@@ -42,7 +42,7 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
-  <script type="module" crossorigin src="/KnowNet/assets/dashboard-9sFRVFHL.js"></script>
+  <script type="module" crossorigin src="/KnowNet/assets/dashboard-U-XSdXQT.js"></script>
   <link rel="stylesheet" crossorigin href="/KnowNet/assets/dashboard-XlyKSLnJ.css">
 </head>
 
@@ -53,48 +53,88 @@
                 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
                     <header
                         class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-6 lg:px-10 py-3 bg-blanco/80 backdrop-blur-sm sticky top-0 z-10 rounded-xl">
-                        <div id="btnToPrincipal" class="flex items-center gap-4 text-azul-oscuro cursor-pointer hover:text-white transition-all duration-300 border-2 border-transparent ">
-                            <div class="size-6 text-naranja">
+                        <div id="btnToPrincipal"
+                            class="flex items-center gap-2 sm:gap-4 text-azul-oscuro cursor-pointer hover:text-naranja transition-all duration-300 active:scale-95">
+                            <div class="size-5 sm:size-6 text-naranja">
                                 <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
                                         fill="currentColor"></path>
                                 </svg>
                             </div>
-                            <h2 class="text-azul-oscuro text-lg font-bold leading-tight tracking-[-0.015em]">KnowNet
-                            </h2>
+                            <h2
+                                class="text-azul-oscuro text-base sm:text-lg font-bold leading-tight tracking-[-0.015em]">
+                                KnowNet</h2>
                         </div>
-                        <div class="flex flex-1 justify-end items-center gap-4 sm:gap-8">
-                            <nav class="hidden lg:flex items-center gap-6">
-                                <a class="text-azul-medio hover:text-naranja text-sm font-medium leading-normal"
-                                    href="#">Inicio</a>
-                                <a class="text-azul-medio hover:text-naranja text-sm font-medium leading-normal"
-                                    href="#">Facultades</a>
-                                <a class="text-azul-medio hover:text-naranja text-sm font-medium leading-normal"
-                                    href="#">Materias Básicas</a>
-                                <a class="text-azul-medio hover:text-naranja text-sm font-medium leading-normal"
-                                    href="#">Opiniones</a>
-                                <a class="text-azul-medio hover:text-naranja text-sm font-medium leading-normal"
-                                    href="#">Recursos</a>
-                                <a class="text-azul-medio hover:text-naranja text-sm font-medium leading-normal"
-                                    href="#">Planes y Precios</a>
-                            </nav>
-                            <div class="flex items-center gap-2">
-                                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-                                    data-alt="User avatar image"
-                                    style='background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAQN0gn-IdKNSvCcG_FXfBLhWe79YoxGEiBJ_f50Irayw-G1hFVbCacF2shXLhYQMIaOKt6fPoHQBfUe4dXEiPHqg1rB_oGraCmQwss0imnpXUplOWzIM6h0-zGiljdZXgWCby4LKY_OZ3Y1gRYir9pV-GO4kEf7TcAW9kiuinyr6HtdPD1kPfbPmxR7bhCekSGtMFRBGbPfqQlNQ1KtbV3nOOYToQkfHjzZ_LQIfgWxG4cCDFawJWtmEls6WX_A6-yKfYzi48cWk0&quot;);'>
-                                </div>
-                                <button class="lg:hidden text-azul-oscuro">
-                                    <span class="material-symbols-outlined">menu</span>
-                                </button>
-                            </div>
+
+                        <nav class="hidden md:flex items-center gap-3 lg:gap-6">
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="dashboardP.html">Inicio</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="materias.html">Materias</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="recursos.html">Recursos</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer" data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer" data-page="contacto.html">Contacto</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer" data-page="perfil.html">Mi Perfil</a>
+                        </nav>
+
+                        <!-- Right Side: Profile + Hamburger -->
+                        <div class="flex items-center gap-4">
+                            <!-- Profile Icon (Desktop - visible desde md) -->
+                            <button id="btn-perfil"
+                                class="hidden md:flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-azul-oscuro text-white hover:bg-naranja transition-all duration-300 cursor-pointer">
+                                <span class="material-symbols-outlined text-xl">person</span>
+                            </button>
+
+                            <!-- Hamburger Button (Mobile - oculto desde md) -->
+                            <button id="hamburger-btn"
+                                class="md:hidden flex items-center justify-center w-10 h-10 text-azul-oscuro hover:text-naranja transition-colors">
+                                <span class="material-symbols-outlined text-3xl">menu</span>
+                            </button>
                         </div>
                     </header>
+
+                    <!-- Mobile Menu (Overlay - oculto desde md) -->
+                    <div id="mobile-menu"
+                        class="fixed inset-0 bg-azul-oscuro/95 backdrop-blur-sm z-40 md:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+
+                        <!-- Close Button -->
+                        <button id="close-menu-btn"
+                            class="absolute top-6 right-6 text-white hover:text-naranja transition-colors">
+                            <span class="material-symbols-outlined text-4xl">close</span>
+                        </button>
+
+                        <!-- Mobile Navigation -->
+                        <nav class="flex flex-col items-center justify-center h-full gap-8 px-8">
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="dashboardP.html">Inicio</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="materias.html">Materias</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="recursos.html">Recursos</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="servicios.html">Planes y Precios</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="#contacto">Contacto</a>
+
+                            <!-- Divider -->
+                            <div class="w-full border-t border-white/20 my-4"></div>
+
+                            <!-- Profile Link in Mobile -->
+                            <a id="mobile-perfil"
+                                class="flex items-center gap-3 text-white hover:text-naranja text-xl font-semibold transition-colors cursor-pointer"
+                                href="perfil.html">
+                                <span class="material-symbols-outlined text-3xl">person</span>
+                                <span>Mi Perfil</span>
+                            </a>
+                        </nav>
+                    </div>
                     <main class="flex-1">
                         <section class="py-10">
                             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-                                <div
-                                    class="flex flex-1 gap-4 rounded-xl border border-gray-200 bg-blanco shadow-sm p-6 flex-col items-start text-left">
+                                <div id="card-tutores"
+                                    class="flex flex-1 gap-4 rounded-xl border border-gray-200 bg-blanco shadow-sm p-6 flex-col items-start text-left cursor-pointer hover:shadow-lg hover:scale-105 hover:border-naranja transition-all duration-300 active:scale-95">
                                     <div class="text-azul-oscuro">
                                         <span class="material-symbols-outlined text-4xl">verified_user</span>
                                     </div>
@@ -105,8 +145,8 @@
                                             confianza de estudiantes destacados y validados por la universidad.</p>
                                     </div>
                                 </div>
-                                <div
-                                    class="flex flex-1 gap-4 rounded-xl border border-gray-200 bg-blanco shadow-sm p-6 flex-col items-start text-left">
+                                <div id="card-horarios"
+                                    class="flex flex-1 gap-4 rounded-xl border border-gray-200 bg-blanco shadow-sm p-6 flex-col items-start text-left cursor-pointer hover:shadow-lg hover:scale-105 hover:border-naranja transition-all duration-300 active:scale-95">
                                     <div class="text-azul-oscuro">
                                         <span class="material-symbols-outlined text-4xl">schedule</span>
                                     </div>
@@ -117,8 +157,8 @@
                                             tutorías que se ajustan perfectamente a tu calendario académico.</p>
                                     </div>
                                 </div>
-                                <div
-                                    class="flex flex-1 gap-4 rounded-xl border border-gray-200 bg-blanco shadow-sm p-6 flex-col items-start text-left">
+                                <div id="card-cursos"
+                                    class="flex flex-1 gap-4 rounded-xl border border-gray-200 bg-blanco shadow-sm p-6 flex-col items-start text-left cursor-pointer hover:shadow-lg hover:scale-105 hover:border-naranja transition-all duration-300 active:scale-95">
                                     <div class="text-azul-oscuro">
                                         <span class="material-symbols-outlined text-4xl">school</span>
                                     </div>
@@ -136,17 +176,20 @@
                                 class="text-azul-oscuro text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
                                 Cursos Destacados</h2>
                             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-                                <div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[4/3] relative overflow-hidden shadow-md border-b-4 border-naranja transition-transform duration-300 ease-in-out hover:scale-105"
+                                <div id="card-calculo"
+                                    class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[4/3] relative overflow-hidden shadow-md border-b-4 border-naranja cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 active:scale-95"
                                     data-alt="Chalkboard with complex calculus equations"
                                     style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%), url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBtu38ttZvGlC5dfjqYAITg854lnhRaDUOYjGZ2Vxi4AFuIgSj-zqKpUoxjpvw7Gw3ezWIaYODHcfFbF9xAfHMAfiZb6ox4NUqy89R8ge_bAS02uAUQqR6iN9j7xBqg3Y-mTHf1Co77wi6jDsqQYkVCZms9Lzi-AxyPh7OSoeLP3XBMyH4mcusMbWovR5g_-T5YXnToJBcSbctI60bdtYgFTvymT1anzn8wvftB-q4OyfIV_bnhlKw_Cd_tClS1UHAimteI_AKOb_k&quot;);'>
                                     <p class="text-blanco text-lg font-bold leading-tight line-clamp-2">Cálculo</p>
                                 </div>
-                                <div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[4/3] relative overflow-hidden shadow-md border-b-4 border-naranja transition-transform duration-300 ease-in-out hover:scale-105"
+                                <div id="card-fisica"
+                                    class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[4/3] relative overflow-hidden shadow-md border-b-4 border-naranja cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 active:scale-95"
                                     data-alt="Physics experiment setup with light prisms"
                                     style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%), url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDlSv-5yAAZfTOvbsmsJMT8F5cHvYo2aCxNWpV4DwKkMISQkX4LP1tiRp5pJat57VDE0BFPaA1_2zv7AbqOQdJDn5WrTkozvAd89p5l1UXYYxQp8aOcxnv1feskq4xXEKXv_jO0Nym10OEIllCntANjxo5aRewAY_E9p7lAUg82Skk-M5G6RR9MLd9ML9bYoVXWjZIxIGsQbv87Wu2lwOV4WU0VlyTXOn8fSwROURu08zGlKd_zvKpH5pTu3CHygKLgNkvesBjEDRQ&quot;);'>
                                     <p class="text-blanco text-lg font-bold leading-tight line-clamp-2">Física</p>
                                 </div>
-                                <div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[4/3] relative overflow-hidden shadow-md border-b-4 border-naranja transition-transform duration-300 ease-in-out hover:scale-105"
+                                <div id="card-quimica"
+                                    class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[4/3] relative overflow-hidden shadow-md border-b-4 border-naranja cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 active:scale-95"
                                     data-alt="Chemistry beakers with colorful liquids in a lab"
                                     style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%), url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDoQfXsxg4cAxqFQ13_7WlQAtvolE8xbRWXBKBbeDBRMrBmsmJlLtI6ZyfEZ_JHxF1LZ5MKvJQ6smJg_B-XabeylCzQkKQXX1xTFQ--mfQUto6_V04J8Yn7gL4LN1Qsqtzl4pBzJrCYBi7p33tha_V1xIg9IDmWJQlgY5skUDDPOLcUpQnBAWjIJmGsyDtF-lNmsUlMsw7NGCkup0l7Uibopc8FZvW_gt0fAfQWYmdlOepwL7v43iWO9j5URC5KJ7y8J3djauN_8nY&quot;);'>
                                     <p class="text-blanco text-lg font-bold leading-tight line-clamp-2">Química</p>
@@ -156,24 +199,15 @@
                     </main>
                     <footer class="flex flex-col gap-6 px-5 py-10 text-center mt-12 border-t border-gray-200">
                         <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-                            <a class="text-azul-medio hover:text-naranja text-sm font-normal leading-normal"
-                                href="#">Inicio</a>
-                            <a class="text-azul-medio hover:text-naranja text-sm font-normal leading-normal"
-                                href="#">Facultades</a>
-                            <a class="text-azul-medio hover:text-naranja text-sm font-normal leading-normal"
-                                href="#">Materias Básicas</a>
-                            <a class="text-azul-medio hover:text-naranja text-sm font-normal leading-normal"
-                                href="#">Opiniones de Materias</a>
-                            <a class="text-azul-medio hover:text-naranja text-sm font-normal leading-normal"
-                                href="#">Recursos</a>
-                            <a class="text-azul-medio hover:text-naranja text-sm font-normal leading-normal"
-                                href="#">Planes y Precios</a>
-                            <a class="text-azul-medio hover:text-naranja text-sm font-normal leading-normal"
-                                href="#">Contacto</a>
-                            <a class="text-azul-medio hover:text-naranja text-sm font-normal leading-normal" href="#">Mi
-                                Perfil</a>
-                            <a class="text-azul-medio hover:text-naranja text-sm font-normal leading-normal"
-                                href="#">Cerrar Sesión</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="dashboardP.html">Inicio</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="materias.html">Materias</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="recursos.html">Recursos</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer" data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer" data-page="contacto.html">Contacto</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer" data-page="perfil.html">Mi Perfil</a>
                         </div>
                         <div class="flex flex-wrap justify-center gap-4">
                             <a aria-label="Facebook" class="text-azul-medio hover:text-naranja" href="#">
