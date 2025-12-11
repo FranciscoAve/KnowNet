@@ -1,16 +1,29 @@
 <!DOCTYPE html>
+
 <html class="light" lang="es">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Dashboard Principal - KnowNet</title>
+    <title>Facultades - KnowNet</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -23,32 +36,31 @@
                         "fondo": "#F5F5F5",
                         "blanco": "#FFFFFF",
                         "primary": "#FF8C42",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#0F2947",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1E3A5F",
+                        "text-light": "#0F2947",
+                        "text-dark": "#F5F5F5",
+                        "text-secondary-light": "#1E3A5F",
+                        "text-secondary-dark": "#aeb7c4"
                     },
                     fontFamily: {
                         "display": ["Poppins", "sans-serif"]
                     },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
                 },
             },
         }
     </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-    </style>
 </head>
 
-<body class="font-display bg-fondo text-azul-oscuro">
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
     <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
         <div class="layout-container flex h-full grow flex-col">
             <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
                 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <!-- TopNavBar Section -->
                     <header
                         class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-6 lg:px-10 py-3 bg-blanco/80 backdrop-blur-sm sticky top-0 z-10 rounded-xl">
                         <div id="btnToPrincipal"
@@ -66,8 +78,10 @@
                                 data-page="materias.html">Materias</a>
                             <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
                                 data-page="recursos.html">Recursos</a>
-                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer" data-page="servicios.html">Planes</a>
-                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer" data-page="contacto.html">Contacto</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="contacto.html">Contacto</a>
                         </nav>
 
                         <!-- Right Side: Profile + Hamburger -->
@@ -121,73 +135,58 @@
                             </a>
                         </nav>
                     </div>
-                    <main class="flex-1">
-                        <section class="py-10">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-                                <div id="card-tutores"
-                                    class="flex flex-1 gap-4 rounded-xl border border-gray-200 bg-blanco shadow-sm p-6 flex-col items-start text-left cursor-pointer hover:shadow-lg hover:scale-105 hover:border-naranja transition-all duration-300 active:scale-95">
-                                    <div class="text-azul-oscuro">
-                                        <span class="material-symbols-outlined text-4xl">verified_user</span>
-                                    </div>
-                                    <div class="flex flex-col gap-1">
-                                        <h2 class="text-azul-oscuro text-base font-bold leading-tight">TUTORES
-                                            VERIFICADOS</h2>
-                                        <p class="text-azul-medio text-sm font-normal leading-normal">Aprende con
-                                            confianza de estudiantes destacados y validados por la universidad.</p>
-                                    </div>
-                                </div>
-                                <div id="card-horarios"
-                                    class="flex flex-1 gap-4 rounded-xl border border-gray-200 bg-blanco shadow-sm p-6 flex-col items-start text-left cursor-pointer hover:shadow-lg hover:scale-105 hover:border-naranja transition-all duration-300 active:scale-95">
-                                    <div class="text-azul-oscuro">
-                                        <span class="material-symbols-outlined text-4xl">schedule</span>
-                                    </div>
-                                    <div class="flex flex-col gap-1">
-                                        <h2 class="text-azul-oscuro text-base font-bold leading-tight">HORARIOS
-                                            FLEXIBLES</h2>
-                                        <p class="text-azul-medio text-sm font-normal leading-normal">Encuentra y agenda
-                                            tutorías que se ajustan perfectamente a tu calendario académico.</p>
-                                    </div>
-                                </div>
-                                <div id="card-cursos"
-                                    class="flex flex-1 gap-4 rounded-xl border border-gray-200 bg-blanco shadow-sm p-6 flex-col items-start text-left cursor-pointer hover:shadow-lg hover:scale-105 hover:border-naranja transition-all duration-300 active:scale-95">
-                                    <div class="text-azul-oscuro">
-                                        <span class="material-symbols-outlined text-4xl">school</span>
-                                    </div>
-                                    <div class="flex flex-col gap-1">
-                                        <h2 class="text-azul-oscuro text-base font-bold leading-tight">CURSOS POR
-                                            FACULTAD</h2>
-                                        <p class="text-azul-medio text-sm font-normal leading-normal">Navega y filtra
-                                            tutores especializados en las materias de tu carrera.</p>
-                                    </div>
-                                </div>
+                    <main class="flex flex-1 justify-center py-5">
+                        <div class="flex w-full max-w-6xl flex-col px-6">
+                            <!-- PageHeading Section -->
+                            <div class="flex flex-col gap-2 py-8 text-center">
+                                <h1 class="text-4xl font-black tracking-tight md:text-5xl">Explora las Facultades de
+                                    ESPOL</h1>
+                                <p
+                                    class="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal leading-normal">
+                                    Selecciona una facultad para encontrar tutores y recursos.</p>
                             </div>
-                        </section>
-                        <section class="py-10">
-                            <h2
-                                class="text-azul-oscuro text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
-                                Cursos Destacados</h2>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-                                <div id="card-calculo"
-                                    class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[4/3] relative overflow-hidden shadow-md border-b-4 border-naranja cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 active:scale-95"
-                                    data-alt="Chalkboard with complex calculus equations"
-                                    style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtu38ttZvGlC5dfjqYAITg854lnhRaDUOYjGZ2Vxi4AFuIgSj-zqKpUoxjpvw7Gw3ezWIaYODHcfFbF9xAfHMAfiZb6ox4NUqy89R8ge_bAS02uAUQqR6iN9j7xBqg3Y-mTHf1Co77wi6jDsqQYkVCZms9Lzi-AxyPh7OSoeLP3XBMyH4mcusMbWovR5g_-T5YXnToJBcSbctI60bdtYgFTvymT1anzn8wvftB-q4OyfIV_bnhlKw_Cd_tClS1UHAimteI_AKOb_k");'>
-                                    <p class="text-blanco text-lg font-bold leading-tight line-clamp-2">Cálculo</p>
-                                </div>
-                                <div id="card-fisica"
-                                    class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[4/3] relative overflow-hidden shadow-md border-b-4 border-naranja cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 active:scale-95"
-                                    data-alt="Physics experiment setup with light prisms"
-                                    style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlSv-5yAAZfTOvbsmsJMT8F5cHvYo2aCxNWpV4DwKkMISQkX4LP1tiRp5pJat57VDE0BFPaA1_2zv7AbqOQdJDn5WrTkozvAd89p5l1UXYYxQp8aOcxnv1feskq4xXEKXv_jO0Nym10OEIllCntANjxo5aRewAY_E9p7lAUg82Skk-M5G6RR9MLd9ML9bYoVXWjZIxIGsQbv87Wu2lwOV4WU0VlyTXOn8fSwROURu08zGlKd_zvKpH5pTu3CHygKLgNkvesBjEDRQ");'>
-                                    <p class="text-blanco text-lg font-bold leading-tight line-clamp-2">Física</p>
-                                </div>
-                                <div id="card-quimica"
-                                    class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[4/3] relative overflow-hidden shadow-md border-b-4 border-naranja cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 active:scale-95"
-                                    data-alt="Chemistry beakers with colorful liquids in a lab"
-                                    style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDoQfXsxg4cAxqFQ13_7WlQAtvolE8xbRWXBKBbeDBRMrBmsmJlLtI6ZyfEZ_JHxF1LZ5MKvJQ6smJg_B-XabeylCzQkKQXX1xTFQ--mfQUto6_V04J8Yn7gL4LN1Qsqtzl4pBzJrCYBi7p33tha_V1xIg9IDmWJQlgY5skUDDPOLcUpQnBAWjIJmGsyDtF-lNmsUlMsw7NGCkup0l7Uibopc8FZvW_gt0fAfQWYmdlOepwL7v43iWO9j5URC5KJ7y8J3djauN_8nY");'>
-                                    <p class="text-blanco text-lg font-bold leading-tight line-clamp-2">Química</p>
-                                </div>
+                            <!-- ImageGrid adapted as Faculty Card Grid -->
+                            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 py-4">
+                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
+                                    href="#">
+                                    <p class="text-lg font-semibold group-hover:text-primary">Ingeniería Civil</p>
+                                </a>
+                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
+                                    href="#">
+                                    <p class="text-lg font-semibold group-hover:text-primary">Mecatrónica</p>
+                                </a>
+                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
+                                    href="#">
+                                    <p class="text-lg font-semibold group-hover:text-primary">Ingeniería Industrial</p>
+                                </a>
+                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
+                                    href="#">
+                                    <p class="text-lg font-semibold group-hover:text-primary">Ingeniería Química</p>
+                                </a>
+                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
+                                    href="#">
+                                    <p class="text-lg font-semibold group-hover:text-primary">Ingeniería Mecánica</p>
+                                </a>
+                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
+                                    href="#">
+                                    <p class="text-lg font-semibold group-hover:text-primary">Ingeniería en Ciencias de
+                                        la
+                                        Tierra</p>
+                                </a>
+                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1 lg:col-span-1"
+                                    href="#">
+                                    <p class="text-lg font-semibold group-hover:text-primary">Ingeniería en Electricidad
+                                        y
+                                        Computación</p>
+                                </a>
+                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1 border-2 border-primary md:col-span-2 lg:col-span-2 cursor-pointer"
+                                href="materias_basicas.html">
+                                    <p class="text-lg font-semibold group-hover:text-primary">Materias Básicas de Formación</p>
+                                </a>
                             </div>
-                        </section>
+                        </div>
                     </main>
+                    <!-- Footer Section -->
                     <footer class="flex flex-col gap-6 px-5 py-10 text-center mt-12 border-t border-gray-200">
                         <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
                             <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
@@ -196,9 +195,12 @@
                                 data-page="materias.html">Materias</a>
                             <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
                                 data-page="recursos.html">Recursos</a>
-                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer" data-page="servicios.html">Planes</a>
-                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer" data-page="contacto.html">Contacto</a>
-                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer" data-page="perfil.html">Mi Perfil</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="contacto.html">Contacto</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="perfil.html">Mi Perfil</a>
                         </div>
                         <div class="flex flex-wrap justify-center gap-4">
                             <a aria-label="Facebook" class="text-azul-medio hover:text-naranja" href="#">
