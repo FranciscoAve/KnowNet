@@ -149,23 +149,29 @@
                             </div>
                         </div>
                         <!-- SearchBar -->
-                        <div class="px-4 py-6">
+                        <div class="px-4 py-6 relative">
                             <label class="flex flex-col min-w-40 h-14 w-full">
                                 <div class="flex w-full flex-1 items-stretch rounded-lg shadow-sm">
-                                    <div
-                                        class="text-text-light-secondary dark:text-text-dark-secondary flex bg-card-light dark:bg-card-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+                                    <div id="searchCuv"
+                                        class="text-azul-medio flex bg-white dark:bg-surface-dark items-center justify-center pl-4 pr-2 rounded-l-lg cursor-pointer hover:text-naranja transition-all duration-300 active:scale-95">
                                         <span class="material-symbols-outlined">search</span>
                                     </div>
-                                    <input
-                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-text-light-primary dark:text-text-dark-primary focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-card-light dark:bg-card-dark h-full placeholder:text-text-light-secondary/70 dark:placeholder:text-text-dark-secondary/70 px-4 rounded-r-lg border-l-0 pl-2 text-base font-normal leading-normal"
-                                        placeholder="Buscar videos, ejercicios, apuntes..." />
+                                    <input id="search-input" type="text"
+                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-azul-oscuro dark:text-text-dark-primary focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white dark:bg-surface-dark h-full placeholder:text-azul-medio/70 px-4 rounded-r-lg text-base font-normal leading-normal"
+                                        placeholder="Buscar videos, ejercicios, apuntes..." autocomplete="off" />
                                 </div>
                             </label>
+
+                            <!-- Dropdown de resultados -->
+                            <div id="search-dropdown"
+                                class="hidden absolute top-full left-4 right-4 mt-2 bg-white dark:bg-surface-dark rounded-xl shadow-2xl border border-gray-200 max-h-[500px] overflow-y-auto z-50">
+                                <!-- Los resultados se generarán dinámicamente -->
+                            </div>
                         </div>
                         <!-- TextGrid -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-                            <a href="recursos_videos_cuv.html" class="flex flex-1 flex-col gap-4 rounded-lg bg-card-light dark:bg-card-dark p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
-                                >
+                            <a href="recursos_videos_cuv.html"
+                                class="flex flex-1 flex-col gap-4 rounded-lg bg-card-light dark:bg-card-dark p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
                                 <div class="text-primary">
                                     <span class="material-symbols-outlined" style="font-size: 32px;">play_circle</span>
                                 </div>
@@ -260,6 +266,7 @@
         </div>
     </div>
     <script type="module" src="src/js/dashboardP.js"></script>
+    <script type="module" src="src/js/search.js"></script>
 </body>
 
 </html>

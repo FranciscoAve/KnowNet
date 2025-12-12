@@ -70,6 +70,16 @@ cursos_facultad?.addEventListener("click", ()=>{
     window.location.href='facultad.html';
 });
 
+const card_calculo = document.getElementById("card-calculo");
+card_calculo?.addEventListener("click", ()=>{
+    window.location.href='materias.html';
+});
+
+const searchCuv = document.getElementById("searchCuv");
+searchCuv?.addEventListener("click", ()=>{
+    window.location.href='recursos_videos_cuv.html'
+})
+
 const materias_basicas = document.getElementById("materias_basicas");
 materias_basicas?.addEventListener("click", ()=>{
     window.location.href='materias_basicas.html';

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="light" lang="es">
 
 <head>
@@ -7,14 +6,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Videos Educativos - KnowNet</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
     <script>
         tailwind.config = {
@@ -32,25 +25,13 @@
                         "background-dark": "#0F2947",
                         "surface-light": "#FFFFFF",
                         "surface-dark": "#1E3A5F",
-                        "text-light": "#0F2947",
-                        "text-dark": "#F5F5F5",
-                        "text-secondary-light": "#1E3A5F",
-                        "text-secondary-dark": "#aeb7c4",
-
                         "text-light-primary": "#0F2947",
                         "text-dark-primary": "#f5f5f5",
-
                         "text-light-secondary": "#1E3A5F",
                         "text-dark-secondary": "#aeb7c4",
                     },
                     fontFamily: {
                         "display": ["Lexend", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
                     },
                 },
             },
@@ -63,246 +44,281 @@
     </style>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark font-display text-text-primary-light dark:text-text-primary-dark">
-    <div class="relative flex min-h-screen w-full flex-col">
-        <div class="flex h-full grow flex-col">
-            <header
-                class="sticky top-0 z-10 w-full border-b border-border-light dark:border-border-dark bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-                <div class="container mx-auto flex items-center justify-between whitespace-nowrap px-4 py-3">
-                    <div class="flex items-center gap-4">
-                        <div class="size-6 text-primary">
-                            <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
-                                    fill="currentColor"></path>
-                            </svg>
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1">
+
+                    <!-- TopNavBar -->
+                    <header
+                        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-6 lg:px-10 py-3 bg-blanco/80 backdrop-blur-sm sticky top-0 z-50 rounded-xl mb-6">
+                        <div id="btnToPrincipal"
+                            class="flex items-center gap-2 sm:gap-4 text-azul-oscuro cursor-pointer hover:text-naranja transition-all duration-300 active:scale-95">
+                            <span class="material-symbols-outlined text-primary text-3xl">school</span>
+                            <h2
+                                class="text-azul-oscuro text-base sm:text-lg font-bold leading-tight tracking-[-0.015em]">
+                                KnowNet</h2>
                         </div>
-                        <h2 class="text-xl font-bold">KnowNet</h2>
-                    </div>
-                    <nav class="hidden items-center gap-9 md:flex">
-                        <a class="text-sm font-medium hover:text-primary" href="#">Tutorías</a>
-                        <a class="text-sm font-medium text-primary" href="#">Recursos</a>
-                        <a class="text-sm font-medium hover:text-primary" href="#">Comunidad</a>
-                        <a class="text-sm font-medium hover:text-primary" href="#">Mi Perfil</a>
-                    </nav>
-                    <div class="flex items-center gap-2">
-                        <button
-                            class="hidden min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-text-primary-light text-sm font-bold tracking-[0.015em] sm:flex">
-                            <span class="truncate">Iniciar Sesión</span>
+
+                        <nav class="hidden md:flex items-center gap-3 lg:gap-6">
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="dashboardP.html">Inicio</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="materias.html">Materias</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="recursos.html">Recursos</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="contacto.html">Contacto</a>
+                        </nav>
+
+                        <div class="flex items-center gap-4">
+                            <button id="btn-perfil"
+                                class="hidden md:flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-azul-oscuro text-white hover:bg-naranja transition-all duration-300 cursor-pointer">
+                                <span class="material-symbols-outlined text-xl">person</span>
+                            </button>
+                            <button id="hamburger-btn"
+                                class="md:hidden flex items-center justify-center w-10 h-10 text-azul-oscuro hover:text-naranja transition-colors">
+                                <span class="material-symbols-outlined text-3xl">menu</span>
+                            </button>
+                        </div>
+                    </header>
+
+                    <!-- Mobile Menu -->
+                    <div id="mobile-menu"
+                        class="fixed inset-0 bg-azul-oscuro/95 backdrop-blur-sm z-40 md:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+                        <button id="close-menu-btn"
+                            class="absolute top-6 right-6 text-white hover:text-naranja transition-colors">
+                            <span class="material-symbols-outlined text-4xl">close</span>
                         </button>
-                        <button
-                            class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-border-light dark:bg-border-dark text-text-primary-light dark:text-text-primary-dark">
-                            <span class="material-symbols-outlined">notifications</span>
-                        </button>
-                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-                            data-alt="User avatar image"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCom6w-1oyrXUc2bkM6hC_s2PGiFgaPiIR6V0Fn6WCemVEvIBy5FF-b3V73VuEtCLATgdvBe7nh_5Pnehl5sqITQGt0j8lW1JYi-2ggnu2AIEEinNB32mtq5mWxBxcbuS-D6LAVXgVhVkBLbVxKgSziwqNFzCXZ4RMFjT1pxKNw1l5KAkfS55_a5kR9cxpofp2j6wvm0_S2J13GmsBPjt_OUQr0WV6_NPXolto6xdrLrbT5lNfHuT360k8pTVrbpWr00l4D_3CfXDs');">
-                        </div>
+                        <nav class="flex flex-col items-center justify-center h-full gap-8 px-8">
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="dashboardP.html">Inicio</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="materias.html">Materias</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="recursos.html">Recursos</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="servicios.html">Planes y Precios</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="contacto.html">Contacto</a>
+                            <div class="w-full border-t border-white/20 my-4"></div>
+                            <a id="mobile-perfil"
+                                class="flex items-center gap-3 text-white hover:text-naranja text-xl font-semibold transition-colors cursor-pointer"
+                                href="perfil.html">
+                                <span class="material-symbols-outlined text-3xl">person</span>
+                                <span>Mi Perfil</span>
+                            </a>
+                        </nav>
                     </div>
+
+                    <!-- Main Content -->
+                    <main class="flex-grow">
+                        <div class="flex flex-col gap-8 md:gap-10">
+
+                            <!-- Page Header -->
+                            <div class="flex flex-col gap-3 px-2 sm:px-4">
+                                <h1
+                                    class="text-3xl sm:text-4xl font-black tracking-tighter text-azul-oscuro dark:text-text-dark-primary">
+                                    Cálculo de una Variable
+                                </h1>
+                                <p
+                                    class="text-sm sm:text-base font-normal text-azul-medio dark:text-text-dark-secondary">
+                                    Explora nuestra biblioteca de recursos audiovisuales para reforzar tus
+                                    conocimientos.
+                                </p>
+                            </div>
+
+                            <!-- Videos Sections -->
+                            <div class="flex flex-col gap-8">
+
+                                <!-- Section 1: LÍMITES Y CONTINUIDAD -->
+                                <section>
+                                    <h2
+                                        class="text-xl sm:text-2xl font-bold tracking-tight text-azul-oscuro dark:text-text-dark-primary px-2 sm:px-4 pb-3 pt-5">
+                                        1. LÍMITES Y CONTINUIDAD
+                                    </h2>
+                                    <div class="relative px-2 sm:px-4">
+                                        <div
+                                            class="flex gap-3 sm:gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+
+                                            <!-- Video Card 1 -->
+                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
+                                                data-youtube-id="dQw4w9WgXcQ">
+                                                <div
+                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
+                                                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg"
+                                                        alt="Introducción a los Límites"
+                                                        class="w-full h-full object-cover">
+                                                    <div
+                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                        <span
+                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-1">
+                                                    <p
+                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
+                                                        Introducción a los Límites</p>
+                                                    <p
+                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
+                                                        10:32</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Video Card 2 -->
+                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
+                                                data-youtube-id="jNQXAC9IVRw">
+                                                <div
+                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
+                                                    <img src="https://img.youtube.com/vi/jNQXAC9IVRw/mqdefault.jpg"
+                                                        alt="Reglas de Derivación" class="w-full h-full object-cover">
+                                                    <div
+                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                        <span
+                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-1">
+                                                    <p
+                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
+                                                        Reglas de Derivación</p>
+                                                    <p
+                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
+                                                        15:10</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Video Card 3 -->
+                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
+                                                data-youtube-id="L_jWHffIx5E">
+                                                <div
+                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
+                                                    <img src="https://img.youtube.com/vi/L_jWHffIx5E/mqdefault.jpg"
+                                                        alt="Integrales Definidas" class="w-full h-full object-cover">
+                                                    <div
+                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                        <span
+                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-1">
+                                                    <p
+                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
+                                                        Integrales Definidas</p>
+                                                    <p
+                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
+                                                        18:45</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Video Card 4 -->
+                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
+                                                data-youtube-id="9bZkp7q19f0">
+                                                <div
+                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
+                                                    <img src="https://img.youtube.com/vi/9bZkp7q19f0/mqdefault.jpg"
+                                                        alt="Aplicaciones de la Integral"
+                                                        class="w-full h-full object-cover">
+                                                    <div
+                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                        <span
+                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-1">
+                                                    <p
+                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
+                                                        Aplicaciones de la Integral</p>
+                                                    <p
+                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
+                                                        22:00</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- Section 2: DERIVADAS Y SUS APLICACIONES -->
+                                <section>
+                                    <h2
+                                        class="text-xl sm:text-2xl font-bold tracking-tight text-azul-oscuro dark:text-text-dark-primary px-2 sm:px-4 pb-3 pt-5">
+                                        2. DERIVADAS Y SUS APLICACIONES
+                                    </h2>
+                                    <div class="relative px-2 sm:px-4">
+                                        <div
+                                            class="flex gap-3 sm:gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+
+                                            <!-- Video Cards similares... -->
+                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
+                                                data-youtube-id="dQw4w9WgXcQ">
+                                                <div
+                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
+                                                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg"
+                                                        alt="Vectores y Cinemática" class="w-full h-full object-cover">
+                                                    <div
+                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                        <span
+                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-1">
+                                                    <p
+                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
+                                                        Vectores y Cinemática</p>
+                                                    <p
+                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
+                                                        14:55</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </section>
+
+                            </div>
+                        </div>
+                    </main>
+
+                    <!-- Footer -->
+                    <footer class="flex flex-col gap-6 px-5 py-10 text-center mt-12 border-t border-gray-200">
+                        <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="dashboardP.html">Inicio</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="materias.html">Materias</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="recursos.html">Recursos</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="contacto.html">Contacto</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="perfil.html">Mi Perfil</a>
+                        </div>
+                        <p class="text-azul-medio text-sm">© 2024 KnowNet. Todos los derechos reservados.</p>
+                    </footer>
+
                 </div>
-            </header>
-            <main class="container mx-auto w-full max-w-6xl flex-1 px-4 py-8 md:py-12">
-                <div class="flex flex-col gap-10">
-                    <div class="flex flex-wrap justify-between gap-4">
-                        <div class="flex flex-col gap-3">
-                            <h1
-                                class="text-4xl font-black tracking-tighter text-text-primary-light dark:text-text-primary-dark">
-                                Videos Educativos</h1>
-                            <p class="text-base font-normal text-text-secondary-light dark:text-text-secondary-dark">
-                                Explora nuestra biblioteca de recursos audiovisuales para reforzar tus conocimientos.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-8">
-                        <section>
-                            <h2
-                                class="text-2xl font-bold tracking-tight text-text-primary-light dark:text-text-primary-dark px-0 pb-3 pt-5">
-                                Cálculo</h2>
-                            <div class="relative">
-                                <div
-                                    class="flex gap-4 overflow-x-auto pb-4 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
-                                    <div
-                                        class="flex h-full min-w-60 flex-1 flex-col gap-3 rounded-lg bg-content-light dark:bg-content-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
-                                        <a class="block w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                                            data-alt="Video thumbnail for Introduction to Limits" href="#"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIrAhp8htubwJKdQ4EeMyFoeNywmc38JUVsTLztVU225TaK80SDQEXfX7SV9gcNxD6yhGEZa5hAOjTacO0HPbp1mkY1iHwB40TjeFPl67olitq8tzgkCEocO8ah7gE6kZrONrxukXnyV6m0D-ExDyqHDTBcNv8v9qn5a9NmWLIkEVFrTr7D3LxRb6jc3F7Ol_4b_Qj56uOCw406k1EkQEa2-f_yq3uIAGI46GfA6iD-bNJoBhhlhcGdoIZQTNTZFfRAq7FRBYhxfw');"
-                                            target="_blank"></a>
-                                        <div class="flex flex-col">
-                                            <p class="font-medium">Introducción a los Límites</p>
-                                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                                                10:32</p>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="flex h-full min-w-60 flex-1 flex-col gap-3 rounded-lg bg-content-light dark:bg-content-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
-                                        <a class="block w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                                            data-alt="Video thumbnail for Differentiation Rules" href="#"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFxteKM1VImz_Kh66MfL3D1nww-Q9n3mZDTJzx2MgPLCQD6CZXpDIxeIE8cr5eIgdQZxYL7w0lrO5geRb9DLLE6931dbX5YhdZpQAH0NnKNT_gDrgffSUoe59im4h8h21_qsEgjmGOu8pVz1ZKkjeOKheR2n0wVKeX6eHtPRlWg4_UQHxWtAtsDqaDDW2K5E8N_pnZVFj2xQp_0MERBDHb97r6yaNSBh8gFtLXWKzykFcrpjneBS1z2AMoUp1BxaVv_CMICVPFokU');"
-                                            target="_blank"></a>
-                                        <div class="flex flex-col">
-                                            <p class="font-medium">Reglas de Derivación</p>
-                                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                                                15:10</p>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="flex h-full min-w-60 flex-1 flex-col gap-3 rounded-lg bg-content-light dark:bg-content-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
-                                        <a class="block w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                                            data-alt="Video thumbnail for Definite Integrals" href="#"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-a6WRbilJ5WhRZipol5uV-n6EMO98tmRNN-gbTU0u4uhGktMA7armXM7Se_Qtvhvigfi1YGQ5Xe0gTo3IKERP-kpAwHrcQ1ftih4K8CC-oRasFkSJnHTPftWgeeN8HSBEVW97egP5iJ_e00B-2_7MGBhvBpxDKzQTXBi86Y6QSVur5Yp0wD1v5bZmIt-8DpJawLmZd-R0kNA3EORfTYBg2pLx2X-YjU3E3KEvmRL_T2cBinn0m5G9arA630UdvO_su5nb3ude4Hw');"
-                                            target="_blank"></a>
-                                        <div class="flex flex-col">
-                                            <p class="font-medium">Integrales Definidas</p>
-                                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                                                18:45</p>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="flex h-full min-w-60 flex-1 flex-col gap-3 rounded-lg bg-content-light dark:bg-content-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
-                                        <a class="block w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                                            data-alt="Video thumbnail for Applications of the Integral" href="#"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWd4Llv64o_9N4aFmpUMCa4nfk1-wiDZaZp36bNmIlL25RDMjok4CLEmZiyKpYq_LNt6BC9yPX3VLugac_8gaHwJ8xy_adcT_uAPVyIXg1tABFWjaMgnhAf_UTT6wuFwZVWP_0GOl2s1zS3WMHLuAPW1kukTwA0OUsiwzTQfktQXx4QWuhOZ0KmKn26WU3CepjnaQgDVnRCNvtxntpqpCyG3y7MZdlmGobRwzFk4Kt9Pdd09YOfy_Rny2Wwf4599Aebzk9hrKbtvI');"
-                                            target="_blank"></a>
-                                        <div class="flex flex-col">
-                                            <p class="font-medium">Aplicaciones de la Integral</p>
-                                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                                                22:00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section>
-                            <h2
-                                class="text-2xl font-bold tracking-tight text-text-primary-light dark:text-text-primary-dark px-0 pb-3 pt-5">
-                                Física</h2>
-                            <div class="relative">
-                                <div
-                                    class="flex gap-4 overflow-x-auto pb-4 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
-                                    <div
-                                        class="flex h-full min-w-60 flex-1 flex-col gap-3 rounded-lg bg-content-light dark:bg-content-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
-                                        <a class="block w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                                            data-alt="Video thumbnail for Vectors and Kinematics" href="#"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOFN2zTVUK4c-J2fyXhO9neI8l5qFMH_lffWvn4jXMayQu1y3zswbwG7pJEbJF4AR39OgDOMWuupxhEDl8xF1u_IDjFMzpxu8Xd6HZCoaESinLdAKzvrvstQmwN5YsxiFifhIJN6W9Um0a8ExnKiyzfcXDBeDsQQzgWZNaoI-Te8l62kihHc0a8DxLEvMV0PnbsjfXksOutsXly9TcyX6EyXvjuNOzKCufibUXYJ2AWuOgCWeeQQ14Znx4ExHPWfCWMmjHQypYMD0');"
-                                            target="_blank"></a>
-                                        <div class="flex flex-col">
-                                            <p class="font-medium">Vectores y Cinemática</p>
-                                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                                                14:55</p>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="flex h-full min-w-60 flex-1 flex-col gap-3 rounded-lg bg-content-light dark:bg-content-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
-                                        <a class="block w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                                            data-alt="Video thumbnail for Newton's Laws" href="#"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4OnOVW0NQUY6BR16t4q6tcyLdzDNcdtsA1Cw9M3SBgrv78QY8lFtBEX4TaafU_sghKTnFTc6fe_FWGaKftlaJE1idpAz46WX6plOC0XkJGbABCZip-4j1Aqm6M-C1g76ZLBMfIoaLexVJU6Tq3WkgKDYns1254pg3bzjy03L5w-O64Z6VODYwNfwQvkHb-8K4Y0BIfb4SOLh_ONKKg5Y6MxaAsq6l4WDambUBIKM8EdDHuXLcBk9l1b9P-Y5OnSciASwGs7iPv-g');"
-                                            target="_blank"></a>
-                                        <div class="flex flex-col">
-                                            <p class="font-medium">Leyes de Newton</p>
-                                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                                                19:20</p>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="flex h-full min-w-60 flex-1 flex-col gap-3 rounded-lg bg-content-light dark:bg-content-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
-                                        <a class="block w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                                            data-alt="Video thumbnail for Work and Energy" href="#"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5TTlx5MrYVmIDfBM-kqMQ6GGsAHU4pZYjQT7SKyTmorkq53WekbGj8YMXZ5kQ_2XGPMxO7kehO6CngFfqeKl9IbUot1ExCy-1CrrWl7jbWgPPK6-FDDPlblXLqh7qCC-D1LNPIyPnzpzOlqlKZhyEEPBKxSLQXFxnzUpb_SrwMP4994u5ulL1rvvkx_VZvsiVinA3kXrl5ByCJgk6itrQLnbWvMbjrRWqw9FCGk6DEDbzVwNOHbPykHcFouz6E5l8xe2LFOM-UV0');"
-                                            target="_blank"></a>
-                                        <div class="flex flex-col">
-                                            <p class="font-medium">Trabajo y Energía</p>
-                                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                                                17:30</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section>
-                            <h2
-                                class="text-2xl font-bold tracking-tight text-text-primary-light dark:text-text-primary-dark px-0 pb-3 pt-5">
-                                Química</h2>
-                            <div class="relative">
-                                <div
-                                    class="flex gap-4 overflow-x-auto pb-4 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
-                                    <div
-                                        class="flex h-full min-w-60 flex-1 flex-col gap-3 rounded-lg bg-content-light dark:bg-content-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
-                                        <a class="block w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                                            data-alt="Video thumbnail for Atomic Structure" href="#"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJHN_LsATVJOEn1po0HAqpYj2hS8ExWLE9o6AnkXU_0kYzPLwG_xauuCXoyJzF-QI5UU4cSLVAhb8N9I0MLvuWFOJ04bXnIwnuEZyY4aJSYI_Z08V1fbgOKxfSCrrEIfSdAE_gbMagxP3cPXLNCZ5bhl1py7uU_hjlhh6AZxBHexGSH4KnQZqcMXhbvcjo_15oRCYew2oVYYsvZjWkkCK2vfis0l0eY8sVjZfE8lnfukchBSzHtMKn527oiggGN_MHKEzFNaerXqs');"
-                                            target="_blank"></a>
-                                        <div class="flex flex-col">
-                                            <p class="font-medium">Estructura del Átomo</p>
-                                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                                                11:15</p>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="flex h-full min-w-60 flex-1 flex-col gap-3 rounded-lg bg-content-light dark:bg-content-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
-                                        <a class="block w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                                            data-alt="Video thumbnail for Types of Chemical Bonds" href="#"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhJqe3w-F8ki9_aBzJWuO09Zi-YQhf_I-AXE3btbYCDNXmE-gOycEZO1XfnhNkY1Q03JVuxP1l7B9FWiek7wgN5W375dg8vDUNHkuH48-Abm9XDDVqjqM_iM9nrJqgdSCitQhpH_j6oSAg0BZOb7k9tm3XypqJqzhsp9vymPiTRS8cdbMvhIO__sYkFdbnC6-HFmOrkUlG8r4udGjPxdcrxSNdFypZ6bJpmHtXei4A9Zck5KWR_0rduygWhcQ5aZbZeukxFPu9EqU');"
-                                            target="_blank"></a>
-                                        <div class="flex flex-col">
-                                            <p class="font-medium">Tipos de Enlaces Químicos</p>
-                                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                                                16:40</p>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="flex h-full min-w-60 flex-1 flex-col gap-3 rounded-lg bg-content-light dark:bg-content-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
-                                        <a class="block w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                                            data-alt="Video thumbnail for Basic Stoichiometry" href="#"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA386E-8I1LAUyotA18XDh_2JaeHLvuKGOtQfyLzdan-Mx00X4fkF7A_pveIG0fRCOe2lDMa_llygsTwa3azCRdwYIRoOv1viaDrKSzHIFRiD-CGsgBLwGCPL8w0z2JPJGyIRVaMVtRICmfVg3-BmOnTiRMAOxKuJIcCYsaj18NHXyFGsCTymk4JYPi-kixt9gBWlBniYVifRV-oMsMtE4Ug37h0wkqn6qIHKaXy3e94Md3tgPl0LlRUPuOehLHG25jhGG9axr9e40');"
-                                            target="_blank"></a>
-                                        <div class="flex flex-col">
-                                            <p class="font-medium">Estequiometría Básica</p>
-                                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                                                21:05</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </main>
-            <footer
-                class="w-full border-t border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark mt-12">
-                <div class="container mx-auto max-w-6xl px-4 py-8">
-                    <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
-                        <div class="flex flex-col items-center gap-2 text-center md:items-start md:text-left">
-                            <div class="flex items-center gap-2">
-                                <div class="size-5 text-primary">
-                                    <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
-                                            fill="currentColor"></path>
-                                    </svg>
-                                </div>
-                                <p class="font-bold">KnowNet</p>
-                            </div>
-                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Conectando
-                                mentes, potenciando el futuro.</p>
-                        </div>
-                        <div class="flex gap-6">
-                            <a class="text-sm text-text-secondary-light dark:text-text-secondary-dark hover:text-primary"
-                                href="#">Términos</a>
-                            <a class="text-sm text-text-secondary-light dark:text-text-secondary-dark hover:text-primary"
-                                href="#">Privacidad</a>
-                            <a class="text-sm text-text-secondary-light dark:text-text-secondary-dark hover:text-primary"
-                                href="#">Ayuda</a>
-                        </div>
-                    </div>
-                    <div
-                        class="mt-6 border-t border-border-light dark:border-border-dark pt-6 text-center text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                        <p>© 2024 KnowNet. Todos los derechos reservados.</p>
-                    </div>
-                </div>
-            </footer>
+            </div>
         </div>
     </div>
+
+    <script type="module" src="src/js/dashboardP.js"></script>
+    <script>
+        // Funcionalidad para abrir videos de YouTube
+        document.querySelectorAll('.video-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const youtubeId = card.getAttribute('data-youtube-id');
+                if (youtubeId) {
+                    window.open(`https://www.youtube.com/watch?v=${youtubeId}`, '_blank');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
