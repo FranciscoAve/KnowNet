@@ -66,21 +66,22 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 
 const cursos_facultad = document.getElementById("card-cursos");
-cursos_facultad.addEventListener("click", ()=>{
+cursos_facultad?.addEventListener("click", ()=>{
     window.location.href='facultad.html';
 });
 
 const materias_basicas = document.getElementById("materias_basicas");
-materias_basicas.addEventListener("click", ()=>{
+materias_basicas?.addEventListener("click", ()=>{
     window.location.href='materias_basicas.html';
 });
 
+
 const materia_calculo = document.getElementById("materia_calculo");
-materia_calculo.addEventListener("click", ()=>{
+materia_calculo?.addEventListener("click", ()=>{
     window.location.href='materias.html';
 });
 
 const btn_perfil = document.getElementById("btn-perfil");
-btn_perfil.addEventListener("click", ()=>{
+btn_perfil?.addEventListener("click", ()=>{
     window.location.href='perfil.html';
 });

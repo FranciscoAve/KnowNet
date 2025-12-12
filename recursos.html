@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Recursos Estudiantiles - KnowNet</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "azul-oscuro": "#0F2947",
+                        "azul-medio": "#1E3A5F",
+                        "naranja": "#FF8C42",
+                        "fondo": "#F5F5F5",
+                        "blanco": "#FFFFFF",
+                        "primary": "#FF8C42",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#0F2947",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1E3A5F",
+                        "text-light": "#0F2947",
+                        "text-dark": "#F5F5F5",
+                        "text-secondary-light": "#1E3A5F",
+                        "text-secondary-dark": "#aeb7c4",
+
+                        "text-light-primary": "#0F2947",
+                        "text-dark-primary": "#f5f5f5",
+
+                        "text-light-secondary": "#1E3A5F",
+                        "text-dark-secondary": "#aeb7c4",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <!-- TopNavBar -->
+                    <header
+                        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-6 lg:px-10 py-3 bg-blanco/80 backdrop-blur-sm sticky top-0 z-10 rounded-xl">
+                        <div id="btnToPrincipal"
+                            class="flex items-center gap-2 sm:gap-4 text-azul-oscuro cursor-pointer hover:text-naranja transition-all duration-300 active:scale-95">
+                            <span class="material-symbols-outlined text-primary text-3xl">school</span>
+                            <h2
+                                class="text-azul-oscuro text-base sm:text-lg font-bold leading-tight tracking-[-0.015em]">
+                                KnowNet</h2>
+                        </div>
+
+                        <nav class="hidden md:flex items-center gap-3 lg:gap-6">
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="dashboardP.html">Inicio</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="materias.html">Materias</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="recursos.html">Recursos</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="contacto.html">Contacto</a>
+                        </nav>
+
+                        <!-- Right Side: Profile + Hamburger -->
+                        <div class="flex items-center gap-4">
+                            <!-- Profile Icon (Desktop - visible desde md) -->
+                            <button id="btn-perfil"
+                                class="hidden md:flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-azul-oscuro text-white hover:bg-naranja transition-all duration-300 cursor-pointer">
+                                <span class="material-symbols-outlined text-xl">person</span>
+                            </button>
+
+                            <!-- Hamburger Button (Mobile - oculto desde md) -->
+                            <button id="hamburger-btn"
+                                class="md:hidden flex items-center justify-center w-10 h-10 text-azul-oscuro hover:text-naranja transition-colors">
+                                <span class="material-symbols-outlined text-3xl">menu</span>
+                            </button>
+                        </div>
+                    </header>
+
+                    <!-- Mobile Menu (Overlay - oculto desde md) -->
+                    <div id="mobile-menu"
+                        class="fixed inset-0 bg-azul-oscuro/95 backdrop-blur-sm z-40 md:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+
+                        <!-- Close Button -->
+                        <button id="close-menu-btn"
+                            class="absolute top-6 right-6 text-white hover:text-naranja transition-colors">
+                            <span class="material-symbols-outlined text-4xl">close</span>
+                        </button>
+
+                        <!-- Mobile Navigation -->
+                        <nav class="flex flex-col items-center justify-center h-full gap-8 px-8">
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="dashboardP.html">Inicio</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="materias.html">Materias</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="recursos.html">Recursos</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="servicios.html">Planes y Precios</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="contacto.html">Contacto</a>
+
+                            <!-- Divider -->
+                            <div class="w-full border-t border-white/20 my-4"></div>
+
+                            <!-- Profile Link in Mobile -->
+                            <a id="mobile-perfil"
+                                class="flex items-center gap-3 text-white hover:text-naranja text-xl font-semibold transition-colors cursor-pointer"
+                                href="perfil.html">
+                                <span class="material-symbols-outlined text-3xl">person</span>
+                                <span>Mi Perfil</span>
+                            </a>
+                        </nav>
+                    </div>
+                    <main class="flex-grow">
+                        <!-- PageHeading -->
+                        <div class="flex flex-wrap justify-between gap-3 p-4 pt-12 text-center md:text-left">
+                            <div class="flex w-full flex-col gap-3 items-center md:items-start">
+                                <p
+                                    class="text-text-light-primary dark:text-text-dark-primary text-4xl font-black leading-tight tracking-[-0.033em]">
+                                    Recursos Estudiantiles</p>
+                                <p
+                                    class="text-text-light-secondary dark:text-text-dark-secondary text-base font-normal leading-normal max-w-lg">
+                                    Encuentra videos, ejercicios, apuntes y todo lo que necesitas para tus estudios.</p>
+                            </div>
+                        </div>
+                        <!-- SearchBar -->
+                        <div class="px-4 py-6">
+                            <label class="flex flex-col min-w-40 h-14 w-full">
+                                <div class="flex w-full flex-1 items-stretch rounded-lg shadow-sm">
+                                    <div
+                                        class="text-text-light-secondary dark:text-text-dark-secondary flex bg-card-light dark:bg-card-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+                                        <span class="material-symbols-outlined">search</span>
+                                    </div>
+                                    <input
+                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-text-light-primary dark:text-text-dark-primary focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-card-light dark:bg-card-dark h-full placeholder:text-text-light-secondary/70 dark:placeholder:text-text-dark-secondary/70 px-4 rounded-r-lg border-l-0 pl-2 text-base font-normal leading-normal"
+                                        placeholder="Buscar videos, ejercicios, apuntes..." />
+                                </div>
+                            </label>
+                        </div>
+                        <!-- TextGrid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+                            <a href="recursos_videos_cuv.html" class="flex flex-1 flex-col gap-4 rounded-lg bg-card-light dark:bg-card-dark p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
+                                >
+                                <div class="text-primary">
+                                    <span class="material-symbols-outlined" style="font-size: 32px;">play_circle</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h2
+                                        class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold leading-tight">
+                                        Videos</h2>
+                                    <p
+                                        class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-normal leading-normal">
+                                        Accede a nuestra biblioteca de videos educativos y tutoriales.</p>
+                                </div>
+                            </a>
+                            <a class="flex flex-1 flex-col gap-4 rounded-lg bg-card-light dark:bg-card-dark p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
+                                href="#">
+                                <div class="text-primary">
+                                    <span class="material-symbols-outlined"
+                                        style="font-size: 32px;">edit_document</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h2
+                                        class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold leading-tight">
+                                        Ejercicios Propuestos</h2>
+                                    <p
+                                        class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-normal leading-normal">
+                                        Pon a prueba tus conocimientos con problemas y casos prácticos.</p>
+                                </div>
+                            </a>
+                            <a class="flex flex-1 flex-col gap-4 rounded-lg bg-card-light dark:bg-card-dark p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
+                                href="#">
+                                <div class="text-primary">
+                                    <span class="material-symbols-outlined" style="font-size: 32px;">book_4</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h2
+                                        class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold leading-tight">
+                                        Apuntes y Guías</h2>
+                                    <p
+                                        class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-normal leading-normal">
+                                        Consulta resúmenes, guías de estudio y apuntes compartidos.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </main>
+                    <!-- Footer -->
+                    <footer class="flex flex-col gap-6 px-5 py-10 text-center mt-12 border-t border-gray-200">
+                        <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="dashboardP.html">Inicio</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="materias.html">Materias</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="recursos.html">Recursos</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="contacto.html">Contacto</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="perfil.html">Mi Perfil</a>
+                        </div>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a aria-label="Facebook" class="text-azul-medio hover:text-naranja" href="#">
+                                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                            <a aria-label="Twitter" class="text-azul-medio hover:text-naranja" href="#">
+                                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22 4s-.7 2.1-2 3.4c1.6 1.4 3.3 4.9 3.3 4.9-6.1-1.4-12.1-4.1-16.2-8.1-1.4 1.2-2.4 2.8-2.4 4.5 0 2.3 1.2 4.3 2.9 5.5-1.1 0-2.2-.3-3.1-.9v.1c0 3.2 2.3 5.8 5.3 6.4-.5.1-1.1.2-1.6.2-.4 0-.8 0-1.2-.1.8 2.6 3.3 4.5 6.1 4.5-2.2 1.7-5.1 2.8-8.2 2.8-.5 0-1.1 0-1.6-.1 2.9 1.9 6.4 3 10.1 3 12.1 0 18.7-10 18.7-18.7v-.8c1.3-1 2.3-2.1 3.2-3.4z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a aria-label="Instagram" class="text-azul-medio hover:text-naranja" href="#">
+                                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                </svg>
+                            </a>
+                        </div>
+                        <p class="text-azul-medio text-sm font-normal leading-normal">© 2024 KnowNet. Todos los derechos
+                            reservados.</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="src/js/dashboardP.js"></script>
+</body>
+
+</html>

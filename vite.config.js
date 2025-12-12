@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import { resourceLimits } from 'worker_threads'
 
 export default defineConfig({
   base: "/KnowNet/",
@@ -11,6 +12,8 @@ export default defineConfig({
         facultad: resolve(__dirname, 'facultad.html'),
         materias_basicas: resolve(__dirname, 'materias_basicas.html'),
         materias: resolve(__dirname, 'materias.html'),
+        recursos: resolve(__dirname, 'recursos.html'),
+        //videos_cuv: resolve(__dirname, 'recursos_videos_cuv.html'),
         // mas páginas HTML aquí
       }
     }
