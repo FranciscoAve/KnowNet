@@ -5,26 +5,18 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Facultades - KnowNet</title>
+    <title>Materias Básicas - KnowNet</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
-        }
-    </style>
-    <script id="tailwind-config">
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -43,25 +35,43 @@
                         "text-light": "#0F2947",
                         "text-dark": "#F5F5F5",
                         "text-secondary-light": "#1E3A5F",
-                        "text-secondary-dark": "#aeb7c4"
+                        "text-secondary-dark": "#aeb7c4",
+
+                        "text-light-primary": "#0F2947",
+                        "text-dark-primary": "#f5f5f5",
+
+                        "text-light-secondary": "#1E3A5F",
+                        "text-dark-secondary": "#aeb7c4",
                     },
                     fontFamily: {
-                        "display": ["Poppins", "sans-serif"]
+                        "display": ["Lexend", "sans-serif"]
                     },
                     borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)',
+                    }
                 },
             },
         }
     </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
   <script type="module" crossorigin src="/KnowNet/assets/dashboardP-Brwd-Tjg.js"></script>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<body class="font-display bg-background-light dark:bg-background-dark">
     <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
         <div class="layout-container flex h-full grow flex-col">
             <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
                 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-                    <!-- TopNavBar Section -->
+                    <!-- TopNavBar -->
                     <header
                         class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-6 lg:px-10 py-3 bg-blanco/80 backdrop-blur-sm sticky top-0 z-10 rounded-xl">
                         <div id="btnToPrincipal"
@@ -136,58 +146,85 @@
                             </a>
                         </nav>
                     </div>
-                    <main class="flex flex-1 justify-center py-5">
-                        <div class="flex w-full max-w-6xl flex-col px-6">
-                            <!-- PageHeading Section -->
-                            <div class="flex flex-col gap-2 py-8 text-center">
-                                <h1 class="text-4xl font-black tracking-tight md:text-5xl">Explora las Facultades de
-                                    ESPOL</h1>
-                                <p
-                                    class="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal leading-normal">
-                                    Selecciona una facultad para encontrar tutores y recursos.</p>
-                            </div>
-                            <!-- ImageGrid adapted as Faculty Card Grid -->
-                            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 py-4">
-                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
-                                    href="#">
-                                    <p class="text-lg font-semibold group-hover:text-primary">Ingeniería Civil</p>
-                                </a>
-                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
-                                    href="#">
-                                    <p class="text-lg font-semibold group-hover:text-primary">Mecatrónica</p>
-                                </a>
-                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
-                                    href="#">
-                                    <p class="text-lg font-semibold group-hover:text-primary">Ingeniería Industrial</p>
-                                </a>
-                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
-                                    href="#">
-                                    <p class="text-lg font-semibold group-hover:text-primary">Ingeniería Química</p>
-                                </a>
-                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
-                                    href="#">
-                                    <p class="text-lg font-semibold group-hover:text-primary">Ingeniería Mecánica</p>
-                                </a>
-                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
-                                    href="#">
-                                    <p class="text-lg font-semibold group-hover:text-primary">Ingeniería en Ciencias de
-                                        la
-                                        Tierra</p>
-                                </a>
-                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1 lg:col-span-1"
-                                    href="#">
-                                    <p class="text-lg font-semibold group-hover:text-primary">Ingeniería en Electricidad
-                                        y
-                                        Computación</p>
-                                </a>
-                                <a class="group flex flex-col items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-8 text-center shadow-md transition-all hover:shadow-xl hover:-translate-y-1 border-2 border-primary md:col-span-2 lg:col-span-2 cursor-pointer"
-                                href="materias_basicas.html">
-                                    <p class="text-lg font-semibold group-hover:text-primary">Materias Básicas de Formación</p>
-                                </a>
+                    <main class="flex-grow">
+                        <div class="container mx-auto px-4 py-8 md:py-16">
+                            <div class="max-w-4xl mx-auto flex flex-col gap-10">
+                                <!-- PageHeading -->
+                                <div class="flex flex-col gap-3 text-center">
+                                    <h1
+                                        class="text-4xl md:text-5xl font-extrabold tracking-tight text-text-light-primary dark:text-text-dark-primary">
+                                        Materias Básicas</h1>
+                                    <p class="text-lg text-text-light-secondary dark:text-text-dark-secondary">Explora
+                                        las áreas
+                                        fundamentales y encuentra el tutor perfecto para fortalecer tus conocimientos.
+                                    </p>
+                                </div>
+                                <!-- ImageGrid -->
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
+                                    <a href="materias.html" class="group flex flex-col overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark shadow-soft transition-all hover:shadow-lg hover:-translate-y-1"
+                                        href="#">
+                                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
+                                            data-alt="A blackboard filled with calculus equations and graphs."
+                                            style='background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAxDjXf6HHAOO3XyWN1-h-EwE_HaPJkAp_N8U4N-Gr8hftdBXFLYpDdH4dRFFvjCfllP0WelqIPVAdzfwygfAWYspv7Pe5qQRubRFEHZbJwmaipKtJ-3k9-TEPM04_5IkxrsISVbqm06AfTcScmsSfwXEpOJCVJApaYUN-4_TiA8y3kMp_yc2QjnrsRArRHt9Ray1hcccQAvmpvNwe5ukdhwAWf92O45wUOoFttqMhllXmfa1lIDju078eUPT9K26D6cCeLpA4ukDY&quot;);'>
+                                        </div>
+                                        <div class="p-6 flex flex-col flex-grow">
+                                            <h3 class="text-xl font-bold text-primary">Cálculo</h3>
+                                            <p
+                                                class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">
+                                                Domina los límites, derivadas e integrales. Construye una base sólida
+                                                para las
+                                                ciencias y la ingeniería.</p>
+                                        </div>
+                                    </a>
+                                    <a class="group flex flex-col overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark shadow-soft transition-all hover:shadow-lg hover:-translate-y-1"
+                                        href="#">
+                                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
+                                            data-alt="An abstract representation of physics concepts like atoms and energy waves."
+                                            style='background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDQToxhANXyx2U9bujxNCB312ctNos0SkrN-wl3JDwCu9ij1Y1xpAi-M7Ba7UstvnGHiM0pGf6FzPpWa6rQvmimrtk8ZoaJ4IbNyP2qbXyLmvJvigXybzJb2-5khYmFvNy9vgp6XgG7QznXd0Ja4G7qu12uKnMn9eYLtVOJg2dSuJZG17iOyGs2xxTsz8DzvCFHFV3VEAUauF1ub684gp55QbFSOMpoD77ckwjg24ymyNHvyGxtYXHvm487kXcpESLG-qP24D1FwJg&quot;);'>
+                                        </div>
+                                        <div class="p-6 flex flex-col flex-grow">
+                                            <h3 class="text-xl font-bold text-primary">Física</h3>
+                                            <p
+                                                class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">
+                                                Comprende los principios del movimiento, la energía y las ondas que
+                                                rigen el
+                                                universo.</p>
+                                        </div>
+                                    </a>
+                                    <a class="group flex flex-col overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark shadow-soft transition-all hover:shadow-lg hover:-translate-y-1"
+                                        href="#">
+                                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
+                                            data-alt="Colorful chemical solutions in laboratory glassware like beakers and flasks."
+                                            style='background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDzrmnYjk07L6R7aZ1PLuBo8pb8hJWRm1RPp5tzUu9dk71ZnJSycgvUHQtMURFjPGl6g_k-Jnfa6plMwiOCzMip1zsWnHiHPA7qMBDDGY64V4H7FRlb05X25HvS-CuQ20hHCFvGGIFAnDC69JAIEidOOftLD_T5UzyvKBMS-Gj8td4WMEItSQAxGY7Ecdyx6IsM89VH6xIUXw8PfPzGQnaqQGDRl-gJa_XT6-totfEdFMtGmJayFy5Cd-wcqATmSiZhYv2QCxRpr38&quot;);'>
+                                        </div>
+                                        <div class="p-6 flex flex-col flex-grow">
+                                            <h3 class="text-xl font-bold text-primary">Química</h3>
+                                            <p
+                                                class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">
+                                                Explora la estructura, propiedades y reacciones de la materia desde el
+                                                nivel
+                                                atómico.</p>
+                                        </div>
+                                    </a>
+                                    <a class="group flex flex-col overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark shadow-soft transition-all hover:shadow-lg hover:-translate-y-1"
+                                        href="#">
+                                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
+                                            data-alt="Lines of programming code displayed on a dark computer screen."
+                                            style='background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBsBryBrbYBGuppPUl46W2ZYfnhDe231JjiX0_EkN1EBhFeVP_9R6NtyxQrDftrwvPj2Ns1yDe1Kl1BAegp8BO51Gi8Vc_vDLDFQHMikmWt6vsdKTjvNPCRaAUZWta7_FvySnBW09q0cRmOnWzpoegxmlYEbpZY2iNvcKkqOjDaxjRWK2f2jRVXfWaG0TndsZWyvrBz-ri0Vx82qeo-kWAN0XYP-mYoBQiBip2yI13sEVBpP2b6J_6TtLDmY2kOKjAkzb0Qw8xOjR0&quot;);'>
+                                        </div>
+                                        <div class="p-6 flex flex-col flex-grow">
+                                            <h3 class="text-xl font-bold text-primary">Fundamentos de Programación</h3>
+                                            <p
+                                                class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">
+                                                Aprende a resolver problemas con lógica, algoritmos y estructuras de
+                                                datos.</p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </main>
-                    <!-- Footer Section -->
+                    <!-- Footer -->
                     <footer class="flex flex-col gap-6 px-5 py-10 text-center mt-12 border-t border-gray-200">
                         <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
                             <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
