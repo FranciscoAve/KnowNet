@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Videos Educativos - KnowNet</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "azul-oscuro": "#0F2947",
+                        "azul-medio": "#1E3A5F",
+                        "naranja": "#FF8C42",
+                        "fondo": "#F5F5F5",
+                        "blanco": "#FFFFFF",
+                        "primary": "#FF8C42",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#0F2947",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1E3A5F",
+                        "text-light-primary": "#0F2947",
+                        "text-dark-primary": "#f5f5f5",
+                        "text-light-secondary": "#1E3A5F",
+                        "text-dark-secondary": "#aeb7c4",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+  <script type="module" crossorigin src="/KnowNet/assets/dashboardP-CvF91__4.js"></script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1">
+
+                    <!-- TopNavBar -->
+                    <header
+                        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-6 lg:px-10 py-3 bg-blanco/80 backdrop-blur-sm sticky top-0 z-50 rounded-xl mb-6">
+                        <div id="btnToPrincipal"
+                            class="flex items-center gap-2 sm:gap-4 text-azul-oscuro cursor-pointer hover:text-naranja transition-all duration-300 active:scale-95">
+                            <span class="material-symbols-outlined text-primary text-3xl">school</span>
+                            <h2
+                                class="text-azul-oscuro text-base sm:text-lg font-bold leading-tight tracking-[-0.015em]">
+                                KnowNet</h2>
+                        </div>
+
+                        <nav class="hidden md:flex items-center gap-3 lg:gap-6">
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="dashboardP.html">Inicio</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="materias.html">Materias</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="recursos.html">Recursos</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="contacto.html">Contacto</a>
+                        </nav>
+
+                        <div class="flex items-center gap-4">
+                            <button id="btn-perfil"
+                                class="hidden md:flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-azul-oscuro text-white hover:bg-naranja transition-all duration-300 cursor-pointer">
+                                <span class="material-symbols-outlined text-xl">person</span>
+                            </button>
+                            <button id="hamburger-btn"
+                                class="md:hidden flex items-center justify-center w-10 h-10 text-azul-oscuro hover:text-naranja transition-colors">
+                                <span class="material-symbols-outlined text-3xl">menu</span>
+                            </button>
+                        </div>
+                    </header>
+
+                    <!-- Mobile Menu -->
+                    <div id="mobile-menu"
+                        class="fixed inset-0 bg-azul-oscuro/95 backdrop-blur-sm z-40 md:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+                        <button id="close-menu-btn"
+                            class="absolute top-6 right-6 text-white hover:text-naranja transition-colors">
+                            <span class="material-symbols-outlined text-4xl">close</span>
+                        </button>
+                        <nav class="flex flex-col items-center justify-center h-full gap-8 px-8">
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="dashboardP.html">Inicio</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="materias.html">Materias</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="recursos.html">Recursos</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="servicios.html">Planes y Precios</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="contacto.html">Contacto</a>
+                            <div class="w-full border-t border-white/20 my-4"></div>
+                            <a id="mobile-perfil"
+                                class="flex items-center gap-3 text-white hover:text-naranja text-xl font-semibold transition-colors cursor-pointer"
+                                href="perfil.html">
+                                <span class="material-symbols-outlined text-3xl">person</span>
+                                <span>Mi Perfil</span>
+                            </a>
+                        </nav>
+                    </div>
+
+                    <!-- Main Content -->
+                    <main class="flex-grow">
+                        <div class="flex flex-col gap-8 md:gap-10">
+
+                            <!-- Page Header -->
+                            <div class="flex flex-col gap-3 px-2 sm:px-4">
+                                <h1
+                                    class="text-3xl sm:text-4xl font-black tracking-tighter text-azul-oscuro dark:text-text-dark-primary">
+                                    Cálculo de una Variable
+                                </h1>
+                                <p
+                                    class="text-sm sm:text-base font-normal text-azul-medio dark:text-text-dark-secondary">
+                                    Explora nuestra biblioteca de recursos audiovisuales para reforzar tus
+                                    conocimientos.
+                                </p>
+                            </div>
+
+                            <!-- Videos Sections -->
+                            <div class="flex flex-col gap-8">
+
+                                <!-- Section 1: LÍMITES Y CONTINUIDAD -->
+                                <section>
+                                    <h2
+                                        class="text-xl sm:text-2xl font-bold tracking-tight text-azul-oscuro dark:text-text-dark-primary px-2 sm:px-4 pb-3 pt-5">
+                                        1. LÍMITES Y CONTINUIDAD
+                                    </h2>
+                                    <div class="relative px-2 sm:px-4">
+                                        <div
+                                            class="flex gap-3 sm:gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+
+                                            <!-- Video Card 1 -->
+                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
+                                                data-youtube-id="dQw4w9WgXcQ">
+                                                <div
+                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
+                                                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg"
+                                                        alt="Introducción a los Límites"
+                                                        class="w-full h-full object-cover">
+                                                    <div
+                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                        <span
+                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-1">
+                                                    <p
+                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
+                                                        Introducción a los Límites</p>
+                                                    <p
+                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
+                                                        10:32</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Video Card 2 -->
+                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
+                                                data-youtube-id="jNQXAC9IVRw">
+                                                <div
+                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
+                                                    <img src="https://img.youtube.com/vi/jNQXAC9IVRw/mqdefault.jpg"
+                                                        alt="Reglas de Derivación" class="w-full h-full object-cover">
+                                                    <div
+                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                        <span
+                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-1">
+                                                    <p
+                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
+                                                        Reglas de Derivación</p>
+                                                    <p
+                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
+                                                        15:10</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Video Card 3 -->
+                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
+                                                data-youtube-id="L_jWHffIx5E">
+                                                <div
+                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
+                                                    <img src="https://img.youtube.com/vi/L_jWHffIx5E/mqdefault.jpg"
+                                                        alt="Integrales Definidas" class="w-full h-full object-cover">
+                                                    <div
+                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                        <span
+                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-1">
+                                                    <p
+                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
+                                                        Integrales Definidas</p>
+                                                    <p
+                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
+                                                        18:45</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Video Card 4 -->
+                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
+                                                data-youtube-id="9bZkp7q19f0">
+                                                <div
+                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
+                                                    <img src="https://img.youtube.com/vi/9bZkp7q19f0/mqdefault.jpg"
+                                                        alt="Aplicaciones de la Integral"
+                                                        class="w-full h-full object-cover">
+                                                    <div
+                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                        <span
+                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-1">
+                                                    <p
+                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
+                                                        Aplicaciones de la Integral</p>
+                                                    <p
+                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
+                                                        22:00</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- Section 2: DERIVADAS Y SUS APLICACIONES -->
+                                <section>
+                                    <h2
+                                        class="text-xl sm:text-2xl font-bold tracking-tight text-azul-oscuro dark:text-text-dark-primary px-2 sm:px-4 pb-3 pt-5">
+                                        2. DERIVADAS Y SUS APLICACIONES
+                                    </h2>
+                                    <div class="relative px-2 sm:px-4">
+                                        <div
+                                            class="flex gap-3 sm:gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+
+                                            <!-- Video Cards similares... -->
+                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
+                                                data-youtube-id="dQw4w9WgXcQ">
+                                                <div
+                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
+                                                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg"
+                                                        alt="Vectores y Cinemática" class="w-full h-full object-cover">
+                                                    <div
+                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                        <span
+                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-1">
+                                                    <p
+                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
+                                                        Vectores y Cinemática</p>
+                                                    <p
+                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
+                                                        14:55</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </section>
+
+                            </div>
+                        </div>
+                    </main>
+
+                    <!-- Footer -->
+                    <footer class="flex flex-col gap-6 px-5 py-10 text-center mt-12 border-t border-gray-200">
+                        <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="dashboardP.html">Inicio</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="materias.html">Materias</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="recursos.html">Recursos</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="contacto.html">Contacto</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="perfil.html">Mi Perfil</a>
+                        </div>
+                        <p class="text-azul-medio text-sm">© 2024 KnowNet. Todos los derechos reservados.</p>
+                    </footer>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funcionalidad para abrir videos de YouTube
+        document.querySelectorAll('.video-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const youtubeId = card.getAttribute('data-youtube-id');
+                if (youtubeId) {
+                    window.open(`https://www.youtube.com/watch?v=${youtubeId}`, '_blank');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
