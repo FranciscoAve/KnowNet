@@ -46,12 +46,7 @@
                     fontFamily: {
                         "display": ["Lexend", "sans-serif"]
                     },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "0.75rem",
-                        "xl": "1rem",
-                        "full": "9999px"
-                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
                     boxShadow: {
                         'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)',
                     }
@@ -71,128 +66,214 @@
 </head>
 
 <body class="font-display bg-background-light dark:bg-background-dark">
-    <div class="relative flex min-h-screen w-full flex-col">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
         <div class="layout-container flex h-full grow flex-col">
-            <!-- TopNavBar -->
-            <header
-                class="sticky top-0 z-50 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
-                <div class="container mx-auto px-4">
-                    <div class="flex h-16 items-center justify-between">
-                        <div class="flex items-center gap-4 text-text-light-primary dark:text-text-dark-primary">
+            <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <!-- TopNavBar -->
+                    <header
+                        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-6 lg:px-10 py-3 bg-blanco/80 backdrop-blur-sm sticky top-0 z-10 rounded-xl">
+                        <div id="btnToPrincipal"
+                            class="flex items-center gap-2 sm:gap-4 text-azul-oscuro cursor-pointer hover:text-naranja transition-all duration-300 active:scale-95">
                             <span class="material-symbols-outlined text-primary text-3xl">school</span>
-                            <h2 class="text-xl font-bold">KnowNet</h2>
+                            <h2
+                                class="text-azul-oscuro text-base sm:text-lg font-bold leading-tight tracking-[-0.015em]">
+                                KnowNet</h2>
                         </div>
-                        <nav class="hidden md:flex items-center gap-8">
-                            <a class="text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary hover:text-primary dark:hover:text-primary transition-colors"
-                                href="#">Home</a>
-                            <a class="text-sm font-bold text-primary" href="#">Find a Tutor</a>
-                            <a class="text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary hover:text-primary dark:hover:text-primary transition-colors"
-                                href="#">My Sessions</a>
+
+                        <nav class="hidden md:flex items-center gap-3 lg:gap-6">
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="dashboardP.html">Inicio</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="materias.html">Materias</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="recursos.html">Recursos</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="contacto.html">Contacto</a>
                         </nav>
+
+                        <!-- Right Side: Profile + Hamburger -->
                         <div class="flex items-center gap-4">
-                            <button
-                                class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700 text-text-light-secondary dark:text-text-dark-secondary">
-                                <span class="material-symbols-outlined">person</span>
+                            <!-- Profile Icon (Desktop - visible desde md) -->
+                            <button id="btn-perfil"
+                                class="hidden md:flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-azul-oscuro text-white hover:bg-naranja transition-all duration-300 cursor-pointer">
+                                <span class="material-symbols-outlined text-xl">person</span>
+                            </button>
+
+                            <!-- Hamburger Button (Mobile - oculto desde md) -->
+                            <button id="hamburger-btn"
+                                class="md:hidden flex items-center justify-center w-10 h-10 text-azul-oscuro hover:text-naranja transition-colors">
+                                <span class="material-symbols-outlined text-3xl">menu</span>
                             </button>
                         </div>
+                    </header>
+
+                    <!-- Mobile Menu (Overlay - oculto desde md) -->
+                    <div id="mobile-menu"
+                        class="fixed inset-0 bg-azul-oscuro/95 backdrop-blur-sm z-40 md:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+
+                        <!-- Close Button -->
+                        <button id="close-menu-btn"
+                            class="absolute top-6 right-6 text-white hover:text-naranja transition-colors">
+                            <span class="material-symbols-outlined text-4xl">close</span>
+                        </button>
+
+                        <!-- Mobile Navigation -->
+                        <nav class="flex flex-col items-center justify-center h-full gap-8 px-8">
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="dashboardP.html">Inicio</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="materias.html">Materias</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="recursos.html">Recursos</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="servicios.html">Planes y Precios</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="contacto.html">Contacto</a>
+
+                            <!-- Divider -->
+                            <div class="w-full border-t border-white/20 my-4"></div>
+
+                            <!-- Profile Link in Mobile -->
+                            <a id="mobile-perfil"
+                                class="flex items-center gap-3 text-white hover:text-naranja text-xl font-semibold transition-colors cursor-pointer"
+                                href="perfil.html">
+                                <span class="material-symbols-outlined text-3xl">person</span>
+                                <span>Mi Perfil</span>
+                            </a>
+                        </nav>
                     </div>
-                </div>
-            </header>
-            <main class="flex-grow">
-                <div class="container mx-auto px-4 py-8 md:py-16">
-                    <div class="max-w-4xl mx-auto flex flex-col gap-10">
-                        <!-- PageHeading -->
-                        <div class="flex flex-col gap-3 text-center">
-                            <h1
-                                class="text-4xl md:text-5xl font-extrabold tracking-tight text-text-light-primary dark:text-text-dark-primary">
-                                Materias Básicas</h1>
-                            <p class="text-lg text-text-light-secondary dark:text-text-dark-secondary">Explora las áreas
-                                fundamentales y encuentra el tutor perfecto para fortalecer tus conocimientos.</p>
+                    <main class="flex-grow">
+                        <div class="container mx-auto px-4 py-8 md:py-16">
+                            <div class="max-w-4xl mx-auto flex flex-col gap-10">
+                                <!-- PageHeading -->
+                                <div class="flex flex-col gap-3 text-center">
+                                    <h1
+                                        class="text-4xl md:text-5xl font-extrabold tracking-tight text-text-light-primary dark:text-text-dark-primary">
+                                        Materias Básicas</h1>
+                                    <p class="text-lg text-text-light-secondary dark:text-text-dark-secondary">Explora
+                                        las áreas
+                                        fundamentales y encuentra el tutor perfecto para fortalecer tus conocimientos.
+                                    </p>
+                                </div>
+                                <!-- ImageGrid -->
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
+                                    <a href="materias.html" class="group flex flex-col overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark shadow-soft transition-all hover:shadow-lg hover:-translate-y-1"
+                                        href="#">
+                                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
+                                            data-alt="A blackboard filled with calculus equations and graphs."
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxDjXf6HHAOO3XyWN1-h-EwE_HaPJkAp_N8U4N-Gr8hftdBXFLYpDdH4dRFFvjCfllP0WelqIPVAdzfwygfAWYspv7Pe5qQRubRFEHZbJwmaipKtJ-3k9-TEPM04_5IkxrsISVbqm06AfTcScmsSfwXEpOJCVJApaYUN-4_TiA8y3kMp_yc2QjnrsRArRHt9Ray1hcccQAvmpvNwe5ukdhwAWf92O45wUOoFttqMhllXmfa1lIDju078eUPT9K26D6cCeLpA4ukDY");'>
+                                        </div>
+                                        <div class="p-6 flex flex-col flex-grow">
+                                            <h3 class="text-xl font-bold text-primary">Cálculo</h3>
+                                            <p
+                                                class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">
+                                                Domina los límites, derivadas e integrales. Construye una base sólida
+                                                para las
+                                                ciencias y la ingeniería.</p>
+                                        </div>
+                                    </a>
+                                    <a class="group flex flex-col overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark shadow-soft transition-all hover:shadow-lg hover:-translate-y-1"
+                                        href="#">
+                                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
+                                            data-alt="An abstract representation of physics concepts like atoms and energy waves."
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQToxhANXyx2U9bujxNCB312ctNos0SkrN-wl3JDwCu9ij1Y1xpAi-M7Ba7UstvnGHiM0pGf6FzPpWa6rQvmimrtk8ZoaJ4IbNyP2qbXyLmvJvigXybzJb2-5khYmFvNy9vgp6XgG7QznXd0Ja4G7qu12uKnMn9eYLtVOJg2dSuJZG17iOyGs2xxTsz8DzvCFHFV3VEAUauF1ub684gp55QbFSOMpoD77ckwjg24ymyNHvyGxtYXHvm487kXcpESLG-qP24D1FwJg");'>
+                                        </div>
+                                        <div class="p-6 flex flex-col flex-grow">
+                                            <h3 class="text-xl font-bold text-primary">Física</h3>
+                                            <p
+                                                class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">
+                                                Comprende los principios del movimiento, la energía y las ondas que
+                                                rigen el
+                                                universo.</p>
+                                        </div>
+                                    </a>
+                                    <a class="group flex flex-col overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark shadow-soft transition-all hover:shadow-lg hover:-translate-y-1"
+                                        href="#">
+                                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
+                                            data-alt="Colorful chemical solutions in laboratory glassware like beakers and flasks."
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDzrmnYjk07L6R7aZ1PLuBo8pb8hJWRm1RPp5tzUu9dk71ZnJSycgvUHQtMURFjPGl6g_k-Jnfa6plMwiOCzMip1zsWnHiHPA7qMBDDGY64V4H7FRlb05X25HvS-CuQ20hHCFvGGIFAnDC69JAIEidOOftLD_T5UzyvKBMS-Gj8td4WMEItSQAxGY7Ecdyx6IsM89VH6xIUXw8PfPzGQnaqQGDRl-gJa_XT6-totfEdFMtGmJayFy5Cd-wcqATmSiZhYv2QCxRpr38");'>
+                                        </div>
+                                        <div class="p-6 flex flex-col flex-grow">
+                                            <h3 class="text-xl font-bold text-primary">Química</h3>
+                                            <p
+                                                class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">
+                                                Explora la estructura, propiedades y reacciones de la materia desde el
+                                                nivel
+                                                atómico.</p>
+                                        </div>
+                                    </a>
+                                    <a class="group flex flex-col overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark shadow-soft transition-all hover:shadow-lg hover:-translate-y-1"
+                                        href="#">
+                                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
+                                            data-alt="Lines of programming code displayed on a dark computer screen."
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsBryBrbYBGuppPUl46W2ZYfnhDe231JjiX0_EkN1EBhFeVP_9R6NtyxQrDftrwvPj2Ns1yDe1Kl1BAegp8BO51Gi8Vc_vDLDFQHMikmWt6vsdKTjvNPCRaAUZWta7_FvySnBW09q0cRmOnWzpoegxmlYEbpZY2iNvcKkqOjDaxjRWK2f2jRVXfWaG0TndsZWyvrBz-ri0Vx82qeo-kWAN0XYP-mYoBQiBip2yI13sEVBpP2b6J_6TtLDmY2kOKjAkzb0Qw8xOjR0");'>
+                                        </div>
+                                        <div class="p-6 flex flex-col flex-grow">
+                                            <h3 class="text-xl font-bold text-primary">Fundamentos de Programación</h3>
+                                            <p
+                                                class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">
+                                                Aprende a resolver problemas con lógica, algoritmos y estructuras de
+                                                datos.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <!-- ImageGrid -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
-                            <a class="group flex flex-col overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark shadow-soft transition-all hover:shadow-lg hover:-translate-y-1"
-                                href="#">
-                                <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
-                                    data-alt="A blackboard filled with calculus equations and graphs."
-                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxDjXf6HHAOO3XyWN1-h-EwE_HaPJkAp_N8U4N-Gr8hftdBXFLYpDdH4dRFFvjCfllP0WelqIPVAdzfwygfAWYspv7Pe5qQRubRFEHZbJwmaipKtJ-3k9-TEPM04_5IkxrsISVbqm06AfTcScmsSfwXEpOJCVJApaYUN-4_TiA8y3kMp_yc2QjnrsRArRHt9Ray1hcccQAvmpvNwe5ukdhwAWf92O45wUOoFttqMhllXmfa1lIDju078eUPT9K26D6cCeLpA4ukDY");'>
-                                </div>
-                                <div class="p-6 flex flex-col flex-grow">
-                                    <h3 class="text-xl font-bold text-primary">Cálculo</h3>
-                                    <p
-                                        class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">
-                                        Domina los límites, derivadas e integrales. Construye una base sólida para las
-                                        ciencias y la ingeniería.</p>
-                                </div>
-                            </a>
-                            <a class="group flex flex-col overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark shadow-soft transition-all hover:shadow-lg hover:-translate-y-1"
-                                href="#">
-                                <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
-                                    data-alt="An abstract representation of physics concepts like atoms and energy waves."
-                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQToxhANXyx2U9bujxNCB312ctNos0SkrN-wl3JDwCu9ij1Y1xpAi-M7Ba7UstvnGHiM0pGf6FzPpWa6rQvmimrtk8ZoaJ4IbNyP2qbXyLmvJvigXybzJb2-5khYmFvNy9vgp6XgG7QznXd0Ja4G7qu12uKnMn9eYLtVOJg2dSuJZG17iOyGs2xxTsz8DzvCFHFV3VEAUauF1ub684gp55QbFSOMpoD77ckwjg24ymyNHvyGxtYXHvm487kXcpESLG-qP24D1FwJg");'>
-                                </div>
-                                <div class="p-6 flex flex-col flex-grow">
-                                    <h3 class="text-xl font-bold text-primary">Física</h3>
-                                    <p
-                                        class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">
-                                        Comprende los principios del movimiento, la energía y las ondas que rigen el
-                                        universo.</p>
-                                </div>
-                            </a>
-                            <a class="group flex flex-col overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark shadow-soft transition-all hover:shadow-lg hover:-translate-y-1"
-                                href="#">
-                                <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
-                                    data-alt="Colorful chemical solutions in laboratory glassware like beakers and flasks."
-                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDzrmnYjk07L6R7aZ1PLuBo8pb8hJWRm1RPp5tzUu9dk71ZnJSycgvUHQtMURFjPGl6g_k-Jnfa6plMwiOCzMip1zsWnHiHPA7qMBDDGY64V4H7FRlb05X25HvS-CuQ20hHCFvGGIFAnDC69JAIEidOOftLD_T5UzyvKBMS-Gj8td4WMEItSQAxGY7Ecdyx6IsM89VH6xIUXw8PfPzGQnaqQGDRl-gJa_XT6-totfEdFMtGmJayFy5Cd-wcqATmSiZhYv2QCxRpr38");'>
-                                </div>
-                                <div class="p-6 flex flex-col flex-grow">
-                                    <h3 class="text-xl font-bold text-primary">Química</h3>
-                                    <p
-                                        class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">
-                                        Explora la estructura, propiedades y reacciones de la materia desde el nivel
-                                        atómico.</p>
-                                </div>
-                            </a>
-                            <a class="group flex flex-col overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark shadow-soft transition-all hover:shadow-lg hover:-translate-y-1"
-                                href="#">
-                                <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
-                                    data-alt="Lines of programming code displayed on a dark computer screen."
-                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsBryBrbYBGuppPUl46W2ZYfnhDe231JjiX0_EkN1EBhFeVP_9R6NtyxQrDftrwvPj2Ns1yDe1Kl1BAegp8BO51Gi8Vc_vDLDFQHMikmWt6vsdKTjvNPCRaAUZWta7_FvySnBW09q0cRmOnWzpoegxmlYEbpZY2iNvcKkqOjDaxjRWK2f2jRVXfWaG0TndsZWyvrBz-ri0Vx82qeo-kWAN0XYP-mYoBQiBip2yI13sEVBpP2b6J_6TtLDmY2kOKjAkzb0Qw8xOjR0");'>
-                                </div>
-                                <div class="p-6 flex flex-col flex-grow">
-                                    <h3 class="text-xl font-bold text-primary">Fundamentos de Programación</h3>
-                                    <p
-                                        class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">
-                                        Aprende a resolver problemas con lógica, algoritmos y estructuras de datos.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </main>
-            <!-- Footer -->
-            <footer class="bg-surface-light dark:bg-surface-dark mt-auto border-t border-gray-200 dark:border-gray-800">
-                <div class="container mx-auto px-4">
-                    <div class="flex flex-col items-center gap-6 py-10 text-center">
+                    </main>
+                    <!-- Footer -->
+                    <footer class="flex flex-col gap-6 px-5 py-10 text-center mt-12 border-t border-gray-200">
                         <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-                            <a class="text-sm text-text-light-secondary dark:text-text-dark-secondary hover:text-primary dark:hover:text-primary"
-                                href="#">About Us</a>
-                            <a class="text-sm text-text-light-secondary dark:text-text-dark-secondary hover:text-primary dark:hover:text-primary"
-                                href="#">FAQ</a>
-                            <a class="text-sm text-text-light-secondary dark:text-text-dark-secondary hover:text-primary dark:hover:text-primary"
-                                href="#">Contact</a>
-                            <a class="text-sm text-text-light-secondary dark:text-text-dark-secondary hover:text-primary dark:hover:text-primary"
-                                href="#">Terms of Service</a>
-                            <a class="text-sm text-text-light-secondary dark:text-text-dark-secondary hover:text-primary dark:hover:text-primary"
-                                href="#">Privacy Policy</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="dashboardP.html">Inicio</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="materias.html">Materias</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="recursos.html">Recursos</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="contacto.html">Contacto</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="perfil.html">Mi Perfil</a>
                         </div>
-                        <p class="text-sm text-text-light-secondary/70 dark:text-text-dark-secondary/70">© 2024 KnowNet.
-                            All rights reserved.</p>
-                    </div>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a aria-label="Facebook" class="text-azul-medio hover:text-naranja" href="#">
+                                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                            <a aria-label="Twitter" class="text-azul-medio hover:text-naranja" href="#">
+                                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22 4s-.7 2.1-2 3.4c1.6 1.4 3.3 4.9 3.3 4.9-6.1-1.4-12.1-4.1-16.2-8.1-1.4 1.2-2.4 2.8-2.4 4.5 0 2.3 1.2 4.3 2.9 5.5-1.1 0-2.2-.3-3.1-.9v.1c0 3.2 2.3 5.8 5.3 6.4-.5.1-1.1.2-1.6.2-.4 0-.8 0-1.2-.1.8 2.6 3.3 4.5 6.1 4.5-2.2 1.7-5.1 2.8-8.2 2.8-.5 0-1.1 0-1.6-.1 2.9 1.9 6.4 3 10.1 3 12.1 0 18.7-10 18.7-18.7v-.8c1.3-1 2.3-2.1 3.2-3.4z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a aria-label="Instagram" class="text-azul-medio hover:text-naranja" href="#">
+                                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                </svg>
+                            </a>
+                        </div>
+                        <p class="text-azul-medio text-sm font-normal leading-normal">© 2024 KnowNet. Todos los derechos
+                            reservados.</p>
+                    </footer>
                 </div>
-            </footer>
+            </div>
         </div>
     </div>
+    <script type="module" src="src/js/dashboardP.js"></script>
 </body>
 
 </html>

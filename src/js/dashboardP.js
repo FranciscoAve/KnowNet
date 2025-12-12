@@ -4,7 +4,7 @@
 const btnToindex = document.getElementById("btnToPrincipal");
 
 btnToindex.addEventListener("click", () => {
-    window.location.href = "index.html";
+    window.location.href = "dashboardP.html";
 });
 
 // ========================================
@@ -73,4 +73,14 @@ cursos_facultad.addEventListener("click", ()=>{
 const materias_basicas = document.getElementById("materias_basicas");
 materias_basicas.addEventListener("click", ()=>{
     window.location.href='materias_basicas.html';
+});
+
+const materia_calculo = document.getElementById("materia_calculo");
+materia_calculo.addEventListener("click", ()=>{
+    window.location.href='materias.html';
+});
+
+const btn_perfil = document.getElementById("btn-perfil");
+btn_perfil.addEventListener("click", ()=>{
+    window.location.href='perfil.html';
 });

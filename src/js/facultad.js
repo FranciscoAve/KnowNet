@@ -4,7 +4,7 @@
 const btnToindex = document.getElementById("btnToPrincipal");
 
 btnToindex.addEventListener("click", () => {
-    window.location.href = "index.html";
+    window.location.href = "dashboardP.html";
 });
 
 // ========================================
