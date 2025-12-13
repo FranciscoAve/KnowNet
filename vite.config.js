@@ -16,6 +16,7 @@ export default defineConfig({
         videos_cuv: resolve(__dirname, 'recursos_videos_cuv.html'),
         servicios: resolve(__dirname, 'servicios.html'),
         contacto: resolve(__dirname, 'contacto.html'),
+        perfil: resolve(__dirname, 'perfil.html'),
         // mas páginas HTML aquí
       }
     }

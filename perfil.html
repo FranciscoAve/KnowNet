@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Perfil de Usuario</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "azul-oscuro": "#0F2947",
+                        "azul-medio": "#1E3A5F",
+                        "naranja": "#FF8C42",
+                        "fondo": "#F5F5F5",
+                        "blanco": "#FFFFFF",
+                        "primary": "#FF8C42",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#0F2947",
+                        "error": "#ef4444",
+                        "primary-dark-text": "#F5F5F5",
+                        "primary-light-text": "#0F2947",
+                        "secondary-light-text": "#1E3A5F",
+                        "secondary-dark-text": "#aeb7c4"
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- TopNavBar Section -->
+
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-6 lg:px-10 py-3 bg-blanco/80 backdrop-blur-sm sticky top-0 z-10 rounded-xl">
+                <div id="btnToPrincipal"
+                    class="flex items-center gap-2 sm:gap-4 text-azul-oscuro cursor-pointer hover:text-naranja transition-all duration-300 active:scale-95">
+                    <span class="material-symbols-outlined text-primary text-3xl">school</span>
+                    <h2 class="text-azul-oscuro text-base sm:text-lg font-bold leading-tight tracking-[-0.015em]">
+                        KnowNet</h2>
+                </div>
+
+                <nav class="hidden md:flex items-center gap-3 lg:gap-6">
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="dashboardP.html">Inicio</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="materias.html">Materias</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="recursos.html">Recursos</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="servicios.html">Planes</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Right Side: Profile + Hamburger -->
+                <div class="flex items-center gap-4">
+                    <!-- Profile Icon (Desktop - visible desde md) -->
+                    <button id="btn-perfil"
+                        class="hidden md:flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-azul-oscuro text-white hover:bg-naranja transition-all duration-300 cursor-pointer">
+                        <span class="material-symbols-outlined text-xl">person</span>
+                    </button>
+
+                    <!-- Hamburger Button (Mobile - oculto desde md) -->
+                    <button id="hamburger-btn"
+                        class="md:hidden flex items-center justify-center w-10 h-10 text-azul-oscuro hover:text-naranja transition-colors">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+                </div>
+            </header>
+            <!-- Mobile Menu (Overlay - oculto desde md)  -->
+            <div id="mobile-menu"
+                class="fixed inset-0 bg-azul-oscuro/95 backdrop-blur-sm z-40 md:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+
+                <!-- Close Button -->
+                <button id="close-menu-btn"
+                    class="absolute top-6 right-6 text-white hover:text-naranja transition-colors">
+                    <span class="material-symbols-outlined text-4xl">close</span>
+                </button>
+
+                <!-- Mobile Navigation -->
+                <nav class="flex flex-col items-center justify-center h-full gap-8 px-8">
+                    <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                        href="dashboardP.html">Inicio</a>
+                    <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                        href="materias.html">Materias</a>
+                    <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                        href="recursos.html">Recursos</a>
+                    <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                        href="servicios.html">Planes y Precios</a>
+                    <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                        href="contacto.html">Contacto</a>
+
+                    <!-- Divider -->
+                    <div class="w-full border-t border-white/20 my-4"></div>
+
+                    <!-- Profile Link in Mobile -->
+                    <a id="mobile-perfil"
+                        class="flex items-center gap-3 text-white hover:text-naranja text-xl font-semibold transition-colors cursor-pointer"
+                        href="perfil.html">
+                        <span class="material-symbols-outlined text-3xl">person</span>
+                        <span>Mi Perfil</span>
+                    </a>
+                </nav>
+            </div>
+            <main class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+                    <!-- Main Content (Left Column) -->
+                    <div class="lg:col-span-2 flex flex-col gap-8">
+                        <!-- Profile Header -->
+                        <section class="flex flex-col md:flex-row items-center gap-6 p-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-48 h-48 md:w-52 md:h-52 border-4 border-primary hover:shadow-2xl hover:scale-105 transition-all duration-300 active:scale-95"
+                                    data-alt="Foto de perfil del usuario"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVmGm4OM0YTFPiwzLP-XNcCoKBCjT8f22eBfUthQS_PlvBjDBZsADNk9pL3Gi55_kNuUrcg3DLdoDsesNqeAZ1GwjW37zn5-pofCVGBqbbPFB0xT3PKLdX_Wi3Z0KJ1aDOo-Ediux2RL5m_hFnqb8g6ZXIxsaV0WBhjxykO33LSJJhO0T1hfiCY0pX_DQ4wfeOjbQQeZO7i3-XRRcP7TAgNcwomCozE7Xn3KUli3cgfZ3hmirwSeoyTZ--9p-mZ84BcuQuQKPwTYw");'>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center md:items-start text-center md:text-left gap-2">
+                                <h1
+                                    class="text-primary-light-text dark:text-primary-dark-text text-3xl font-bold tracking-tight">
+                                    Angela María Rodríguez Zambrano</h1>
+                                <p class="text-secondary-light-text dark:text-secondary-dark-text text-base">Universidad: Escuela Superior Politécnica del Litoral</p>
+                                <p class="text-secondary-light-text dark:text-secondary-dark-text text-sm">III Semestre</p>
+                                <p class="text-secondary-light-text dark:text-secondary-dark-text text-sm">Fecha de ingreso: 02/10/2025</p>
+                                <p class="text-secondary-light-text dark:text-secondary-dark-text text-sm">Carrera: Ingeniería Civil</p>
+                                <p class="text-secondary-light-text dark:text-secondary-dark-text text-sm">Fecha de ingreso: 02/10/2025</p>
+                                <p class="text-secondary-light-text dark:text-secondary-dark-text text-sm">Última vez
+                                    conectado: hace 2 horas</p>
+                                <p
+                                    class="text-primary-light-text dark:text-primary-dark-text text-sm font-medium flex items-center gap-1.5">
+                                    <span class="material-symbols-outlined text-base">mail</span>
+                                    arodrig@espol.edu.ec
+                                </p>
+                                <div class="flex w-full md:w-auto flex-col sm:flex-row gap-3 mt-4">
+                                    <button
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary/20 dark:bg-primary/30 text-primary-light-text dark:text-primary-dark-text text-sm font-bold tracking-[0.015em] hover:bg-primary/30 dark:hover:bg-primary/40">
+                                        <span class="truncate">EDITAR INFORMACIÓN</span>
+                                    </button>
+                                    <button
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 text-primary-light-text dark:text-primary-dark-text text-sm font-bold tracking-wide border border-border-light dark:border-border-dark transition-all duration-300 hover:border-error hover:text-error hover:shadow-md hover:scale-[1.02] active:scale-95">
+                                        <span class="truncate">CERRAR SESIÓN</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Biografía Section -->
+                        <section>
+                            <h2
+                                class="text-primary-light-text dark:text-primary-dark-text text-2xl font-bold tracking-[-0.015em] px-4 pb-3">
+                                BIOGRAFÍA</h2>
+                            <div class="bg-white dark:bg-background-dark/50 rounded-lg shadow-sm p-6">
+                                <p
+                                    class="text-primary-light-text dark:text-primary-dark-text text-base leading-relaxed">
+                                    ¡Hola! Soy Elena, una apasionada estudiante de Ingeniería Civil con un gran
+                                    interés en la ciencia de los materiales y fenomémos físicos. Me
+                                    encanta resolver problemas complejos y colaborar en proyectos innovadores. En
+                                    KnowNet, busco conectar con compañeros para compartir conocimientos en cálculo,
+                                    física y química. ¡Siempre estoy dispuesta a ayudar y
+                                    aprender!
+                                </p>
+                            </div>
+                        </section>
+                        <!-- Badges/Logros Section -->
+                        <section>
+                            <h2
+                                class="text-primary-light-text dark:text-primary-dark-text text-2xl font-bold tracking-[-0.015em] px-4 pb-3">
+                                Badges/Logros</h2>
+                            <div class="bg-white dark:bg-background-dark/50 rounded-lg shadow-sm p-6">
+                                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
+                                    <div class="flex flex-col items-center gap-2">
+                                        <div
+                                            class="flex items-center justify-center size-20 rounded-full bg-primary/10 dark:bg-primary/20 text-primary">
+                                            <span class="material-symbols-outlined text-4xl">workspace_premium</span>
+                                        </div>
+                                        <p
+                                            class="text-primary-light-text dark:text-primary-dark-text text-sm font-medium">
+                                            Tutor Verificado</p>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2">
+                                        <div
+                                            class="flex items-center justify-center size-20 rounded-full bg-primary/10 dark:bg-primary/20 text-primary">
+                                            <span class="material-symbols-outlined text-4xl">school</span>
+                                        </div>
+                                        <p
+                                            class="text-primary-light-text dark:text-primary-dark-text text-sm font-medium">
+                                            10+ Tutorías</p>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2">
+                                        <div
+                                            class="flex items-center justify-center size-20 rounded-full bg-primary/10 dark:bg-primary/20 text-primary">
+                                            <span class="material-symbols-outlined text-4xl">star</span>
+                                        </div>
+                                        <p
+                                            class="text-primary-light-text dark:text-primary-dark-text text-sm font-medium">
+                                            Máxima Calificación</p>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2">
+                                        <div
+                                            class="flex items-center justify-center size-20 rounded-full bg-primary/10 dark:bg-primary/20 text-primary">
+                                            <span class="material-symbols-outlined text-4xl">calendar_month</span>
+                                        </div>
+                                        <p
+                                            class="text-primary-light-text dark:text-primary-dark-text text-sm font-medium">
+                                            Miembro 1 Año</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- Side Panel (Right Column) -->
+                    <aside class="flex flex-col gap-6">
+                        <div class="bg-white dark:bg-background-dark/50 rounded-lg shadow-sm p-6">
+                            <h3
+                                class="text-primary-light-text dark:text-primary-dark-text text-xl font-bold tracking-[-0.015em] mb-4">
+                                Cursos suscritos</h3>
+                            <div class="flex flex-col gap-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="bg-primary aspect-square rounded h-16 w-16 flex-shrink-0"
+                                        data-alt="miniatura del curso"></div>
+                                    <div>
+                                        <p class="text-primary-light-text dark:text-primary-dark-text font-semibold">
+                                            Cálculo Diferencial e Integral</p>
+                                        <p class="text-secondary-light-text dark:text-secondary-dark-text text-sm">Por:
+                                            Ing. Carlos Gómez</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="bg-primary aspect-square rounded h-16 w-16 flex-shrink-0"
+                                        data-alt="miniatura del curso"></div>
+                                    <div>
+                                        <p class="text-primary-light-text dark:text-primary-dark-text font-semibold">
+                                            Química General</p>
+                                        <p class="text-secondary-light-text dark:text-secondary-dark-text text-sm">Por:
+                                            Dra. Ana Peréz</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </main>
+            <!-- Footer Section -->
+            <footer class="flex flex-col gap-6 px-5 py-10 text-center mt-12 border-t border-gray-200">
+                <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="dashboardP.html">Inicio</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="materias.html">Materias</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="recursos.html">Recursos</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="servicios.html">Planes</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="contacto.html">Contacto</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="perfil.html">Mi Perfil</a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a aria-label="Facebook" class="text-azul-medio hover:text-naranja" href="#">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a aria-label="Twitter" class="text-azul-medio hover:text-naranja" href="#">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M22 4s-.7 2.1-2 3.4c1.6 1.4 3.3 4.9 3.3 4.9-6.1-1.4-12.1-4.1-16.2-8.1-1.4 1.2-2.4 2.8-2.4 4.5 0 2.3 1.2 4.3 2.9 5.5-1.1 0-2.2-.3-3.1-.9v.1c0 3.2 2.3 5.8 5.3 6.4-.5.1-1.1.2-1.6.2-.4 0-.8 0-1.2-.1.8 2.6 3.3 4.5 6.1 4.5-2.2 1.7-5.1 2.8-8.2 2.8-.5 0-1.1 0-1.6-.1 2.9 1.9 6.4 3 10.1 3 12.1 0 18.7-10 18.7-18.7v-.8c1.3-1 2.3-2.1 3.2-3.4z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a aria-label="Instagram" class="text-azul-medio hover:text-naranja" href="#">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-azul-medio text-sm font-normal leading-normal">© 2024 KnowNet. Todos los derechos
+                    reservados.</p>
+            </footer>
+        </div>
+    </div>
+    <script type="module" src="src/js/dashboardP.js"></script>
+</body>
+
+</html>
