@@ -9,7 +9,8 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
@@ -17,7 +18,14 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <style>
-        .material-symbols-outlined {
+        .material-symbols-outlined.unfilled{
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+        .material-symbols-outlined{
             font-variation-settings:
                 'FILL' 1,
                 'wght' 400,
@@ -53,7 +61,7 @@
                         "text-dark-secondary": "#aeb7c4",
                     },
                     fontFamily: {
-                        "display": ["Lexend", "sans-serif"]
+                        "display": ["Poppins", "sans-serif"]
                     },
                     borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
@@ -72,7 +80,7 @@
                         class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-6 lg:px-10 py-3 bg-blanco/80 backdrop-blur-sm sticky top-0 z-10 rounded-xl">
                         <div id="btnToPrincipal"
                             class="flex items-center gap-2 sm:gap-4 text-azul-oscuro cursor-pointer hover:text-naranja transition-all duration-300 active:scale-95">
-                            <span class="material-symbols-outlined text-primary text-3xl">school</span>
+                            <span class="material-symbols-outlined unfilled text-primary text-3xl">school</span>
                             <h2
                                 class="text-azul-oscuro text-base sm:text-lg font-bold leading-tight tracking-[-0.015em]">
                                 KnowNet</h2>
@@ -205,8 +213,7 @@
                                         <span class="material-symbols-outlined">star</span>
                                         <span class="material-symbols-outlined">star</span>
                                         <span class="material-symbols-outlined">star</span>
-                                        <span
-                                            class="material-symbols-outlined text-gray-300 dark:text-gray-600">star</span>
+                                        <span class="material-symbols-outlined">star</span>
                                     </div>
                                     <blockquote
                                         class="text-azul-medio dark:text-text-dark-secondary text-sm font-normal leading-normal italic my-3">
@@ -219,7 +226,8 @@
                                         complicadas… pero ¡este curso de
                                         Cálculo lo cambia TODO! ✨"
                                     </blockquote>
-                                    <p class="text-naranja text-xs font-semibold uppercase tracking-wider mt-4">Cálculo I</p>
+                                    <p class="text-naranja text-xs font-semibold uppercase tracking-wider mt-4">Cálculo
+                                        I</p>
                                 </div>
                             </div>
 
@@ -277,8 +285,7 @@
                                         <span class="material-symbols-outlined">star</span>
                                         <span class="material-symbols-outlined">star</span>
                                         <span class="material-symbols-outlined">star</span>
-                                        <span
-                                            class="material-symbols-outlined text-gray-300 dark:text-gray-600">star</span>
+                                        <span class="material-symbols-outlined">star</span>
                                     </div>
                                     <blockquote
                                         class="text-azul-medio dark:text-text-dark-secondary text-sm font-normal leading-normal italic my-3">
@@ -290,7 +297,8 @@
                                         pueden ser un poco, digamos,
                                         complicadas… pero ¡este curso de
                                         Cálculo lo cambia TODO! ✨"
-                                    <p class="text-naranja text-xs font-semibold uppercase tracking-wider mt-4">Cálculo I</p>
+                                        <p class="text-naranja text-xs font-semibold uppercase tracking-wider mt-4">
+                                            Cálculo I</p>
                                 </div>
                             </div>
                         </div>
