@@ -2,11 +2,81 @@
 const videosDatabase = [
   {
     id: 1,
-    titulo: "Introducción a los Límites",
+    titulo: "Introducción y espacios métricos",
     categoria: "Límites y Continuidad",
-    duracion: "10:32",
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
-    youtubeId: "dQw4w9WgXcQ",
+    duracion: "02:07:45",
+    thumbnail: "https://img.youtube.com/vi/mBRxY5cu33Q/mqdefault.jpg",
+    youtubeId: "mBRxY5cu33Q",
+    materia: "Cálculo"
+  },
+
+  {
+    id: 2,
+    titulo: "Definición formal del límite",
+    categoria: "Límites y Continuidad",
+    duracion: "01:44:34",
+    thumbnail: "https://img.youtube.com/vi/f7y5jSWD9dc/mqdefault.jpg",
+    youtubeId: "f7y5jSWD9dc",
+    materia: "Cálculo"
+  },
+
+  {
+    id: 3,
+    titulo: "Límites laterales y gráficos",
+    categoria: "Límites y Continuidad",
+    duracion: "01:13:58",
+    thumbnail: "https://img.youtube.com/vi/-oAg599xThE/mqdefault.jpg",
+    youtubeId: "-oAg599xThE",
+    materia: "Cálculo"
+  },
+
+  {
+    id: 4,
+    titulo: "Continuidad",
+    categoria: "Límites y Continuidad",
+    duracion: "01:01:21",
+    thumbnail: "https://img.youtube.com/vi/UjBPZPul58Y/mqdefault.jpg",
+    youtubeId: "UjBPZPul58Y",
+    materia: "Cálculo"
+  },
+
+  {
+    id: 5,
+    titulo: "Introducción y derivadas por definición",
+    categoria: "Derivadas y sus Aplicaciones",
+    duracion: "01:35:20",
+    thumbnail: "https://img.youtube.com/vi/ifVtYnvCjRo/mqdefault.jpg",
+    youtubeId: "ifVtYnvCjRo",
+    materia: "Cálculo"
+  },
+
+  {
+    id: 6,
+    titulo: "Reglas y propiedades de la derivada",
+    categoria: "Derivadas y sus Aplicaciones",
+    duracion: "01:58:07",
+    thumbnail: "https://img.youtube.com/vi/NzkICsMBfVA/mqdefault.jpg",
+    youtubeId: "NzkICsMBfVA",
+    materia: "Cálculo"
+  },
+
+  {
+    id: 6,
+    titulo: "Regla de la cadena",
+    categoria: "Derivadas y sus Aplicaciones",
+    duracion: "01:02:01",
+    thumbnail: "https://img.youtube.com/vi/iJS23HIoY34/mqdefault.jpg",
+    youtubeId: "iJS23HIoY34",
+    materia: "Cálculo"
+  },
+
+  {
+    id: 7,
+    titulo: "Derivación implícita",
+    categoria: "Derivadas y sus Aplicaciones",
+    duracion: "01:23:59",
+    thumbnail: "https://img.youtube.com/vi/ELJZlIh7Cok/mqdefault.jpg",
+    youtubeId: "ELJZlIh7Cok",
     materia: "Cálculo"
   },
   // ... más videos
