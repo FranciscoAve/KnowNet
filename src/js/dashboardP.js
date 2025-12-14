@@ -72,7 +72,7 @@ cursos_facultad?.addEventListener("click", ()=>{
 
 const card_calculo = document.getElementById("card-calculo");
 card_calculo?.addEventListener("click", ()=>{
-    window.location.href='materias.html';
+    window.location.href='materias_calculo.html';
 });
 
 const searchCuv = document.getElementById("searchCuv");
@@ -88,7 +88,7 @@ materias_basicas?.addEventListener("click", ()=>{
 
 const materia_calculo = document.getElementById("materia_calculo");
 materia_calculo?.addEventListener("click", ()=>{
-    window.location.href='materias.html';
+    window.location.href='materias_calculo.html';
 });
 
 const btn_perfil = document.getElementById("btn-perfil");
