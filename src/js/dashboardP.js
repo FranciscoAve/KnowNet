@@ -75,6 +75,11 @@ card_calculo?.addEventListener("click", ()=>{
     window.location.href='materias_calculo.html';
 });
 
+const card_fisica = document.getElementById("card-fisica");
+card_fisica?.addEventListener("click", ()=>{
+    window.location.href='materias_fisica.html';
+});
+
 const searchCuv = document.getElementById("searchCuv");
 searchCuv?.addEventListener("click", ()=>{
     window.location.href='recursos_videos_cuv.html'

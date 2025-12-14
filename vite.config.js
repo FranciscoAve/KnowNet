@@ -13,6 +13,7 @@ export default defineConfig({
         materias_basicas: resolve(__dirname, 'materias_basicas.html'),
         materias: resolve(__dirname, 'materias.html'),
         materia_calculo: resolve(__dirname, 'materias_calculo.html'),
+        materia_fisica: resolve(__dirname, 'materias_fisica.html'),
         recursos: resolve(__dirname, 'recursos.html'),
         videos_cuv: resolve(__dirname, 'recursos_videos_cuv.html'),
         servicios: resolve(__dirname, 'servicios.html'),
