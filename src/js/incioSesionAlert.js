@@ -3,12 +3,17 @@
 // ========================================
 
 const modalHTML = `
-    <div class="w-full max-w-md bg-white rounded-xl shadow-2xl transform transition-all scale-100 opacity-100 animate-fadeIn">
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl transform transition-all scale-100 opacity-100 animate-fadeIn border border-gray-100">
         <div class="p-8">
             <!-- Header con botón cerrar -->
-            <div class="flex items-center justify-between mb-6">
-                <h2 class="text-2xl font-bold text-[#0F2947]">Iniciar Sesión</h2>
-                <button id="close-modal" class="text-gray-400 hover:text-[#0F2947] transition-colors">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-[#0F2947] to-[#1E3A5F] rounded-xl flex items-center justify-center shadow-lg">
+                        <span class="material-symbols-outlined text-white text-2xl">school</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-[#0F2947]">Iniciar Sesión</h2>
+                </div>
+                <button id="close-modal" class="text-gray-400 hover:text-[#0F2947] transition-colors p-2 hover:bg-gray-100 rounded-lg">
                     <span class="material-symbols-outlined">close</span>
                 </button>
             </div>
@@ -17,18 +22,18 @@ const modalHTML = `
             <form id="login-form" class="space-y-6">
                 <!-- Usuario -->
                 <div class="space-y-2">
-                    <label class="block text-sm font-medium text-[#0F2947]" for="username">
-                        Usuario
+                    <label class="block text-sm font-semibold text-[#0F2947]" for="username">
+                        Usuario o Email
                     </label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <span class="material-symbols-outlined text-gray-400 text-[20px]">person</span>
+                    <div class="relative group">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-colors">
+                            <span class="material-symbols-outlined text-gray-400 text-[20px] group-focus-within:text-[#FF8C42]">person</span>
                         </div>
                         <input 
-                            class="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF8C42] focus:border-transparent sm:text-sm" 
+                            class="block w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-[#FF8C42] transition-all sm:text-sm bg-gray-50 focus:bg-white" 
                             id="username" 
                             name="username" 
-                            placeholder="Ingresa tu usuario" 
+                            placeholder="tu.usuario@espol.edu.ec" 
                             type="text"
                             required
                         />
@@ -37,18 +42,18 @@ const modalHTML = `
 
                 <!-- Contraseña -->
                 <div class="space-y-2">
-                    <label class="block text-sm font-medium text-[#0F2947]" for="password">
+                    <label class="block text-sm font-semibold text-[#0F2947]" for="password">
                         Contraseña
                     </label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <span class="material-symbols-outlined text-gray-400 text-[20px]">lock</span>
+                    <div class="relative group">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-colors">
+                            <span class="material-symbols-outlined text-gray-400 text-[20px] group-focus-within:text-[#FF8C42]">lock</span>
                         </div>
                         <input 
-                            class="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF8C42] focus:border-transparent sm:text-sm" 
+                            class="block w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-[#FF8C42] transition-all sm:text-sm bg-gray-50 focus:bg-white" 
                             id="password" 
                             name="password" 
-                            placeholder="Ingresa tu contraseña" 
+                            placeholder="••••••••" 
                             type="password"
                             required
                         />
@@ -56,48 +61,49 @@ const modalHTML = `
                 </div>
 
                 <!-- Recordarme / Olvidaste contraseña -->
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between text-sm">
                     <div class="flex items-center">
                         <input 
-                            class="h-4 w-4 text-[#FF8C42] focus:ring-[#FF8C42] border-gray-300 rounded" 
+                            class="h-4 w-4 text-[#FF8C42] focus:ring-[#FF8C42] border-gray-300 rounded cursor-pointer" 
                             id="remember-me" 
                             name="remember-me" 
                             type="checkbox"
                         />
-                        <label class="ml-2 block text-sm text-gray-600" for="remember-me">
+                        <label class="ml-2 block text-gray-600 cursor-pointer select-none" for="remember-me">
                             Recordarme
                         </label>
                     </div>
-                    <div class="text-sm">
+                    <div>
                         <a class="font-medium text-[#1E3A5F] hover:text-[#FF8C42] transition-colors" href="#">
                             ¿Olvidaste tu contraseña?
                         </a>
                     </div>
                 </div>
 
-                <!-- Botones -->
-                <div class="grid grid-cols-2 gap-4 pt-2">
-                    <button 
-                        id="cancel-btn"
-                        class="w-full flex justify-center py-2.5 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF8C42] transition-colors" 
-                        type="button"
-                    >
-                        Cancelar
-                    </button>
-                    <button 
-                        class="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-lg shadow-md text-sm font-medium text-white bg-[#FF8C42] hover:bg-[#e67a35] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF8C42] transition-all" 
-                        type="submit"
-                    >
-                        Iniciar Sesión
-                    </button>
-                </div>
+                <!-- Botón de Inicio de Sesión -->
+                <button 
+                    class="w-full flex items-center justify-center gap-2 py-3.5 px-4 border border-transparent rounded-xl shadow-lg text-base font-bold text-white bg-gradient-to-r from-[#FF8C42] to-[#ff7a29] hover:from-[#ff7a29] hover:to-[#ff6810] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF8C42] transition-all transform hover:scale-[1.02] active:scale-95" 
+                    type="submit"
+                >
+                    <span>Iniciar Sesión</span>
+                    <span class="material-symbols-outlined text-xl">arrow_forward</span>
+                </button>
+
+                <!-- Botón de Cancelar (secundario) -->
+                <button 
+                    id="cancel-btn"
+                    class="w-full flex justify-center py-3 px-4 border-2 border-gray-200 rounded-xl text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-all" 
+                    type="button"
+                >
+                    Cancelar
+                </button>
             </form>
 
             <!-- Enlace a registro -->
             <div class="mt-6 text-center">
                 <p class="text-sm text-gray-600">
                     ¿No tienes una cuenta? 
-                    <a class="font-medium text-[#1E3A5F] hover:text-[#FF8C42] transition-colors" href="#">
+                    <a class="font-semibold text-[#1E3A5F] hover:text-[#FF8C42] transition-colors" href="#">
                         Regístrate aquí
                     </a>
                 </p>
@@ -110,14 +116,14 @@ const btnInicioSesion = document.getElementById('inicioSesion');
 const modalOverlay = document.getElementById('modal-overlay');
 
 btnInicioSesion.addEventListener('click', (e) => {
-    e.preventDefault(); 
-    
+    e.preventDefault();
+
     modalOverlay.innerHTML = modalHTML;
-    
+
     modalOverlay.classList.remove('hidden');
-    
+
     document.body.style.overflow = 'hidden';
-    
+
     setupModalListeners();
 });
 
@@ -159,13 +165,13 @@ function handleEscape(e) {
 
 function handleLogin(e) {
     e.preventDefault();
-    
+
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    
+
     // Aquí harías la validación real
     console.log('Login attempt:', { username, password });
-    
+
     if (username && password) {
         window.location.href = 'dashboardP.html';
     }

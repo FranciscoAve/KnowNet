@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="light" lang="es">
 
 <head>
@@ -9,12 +8,9 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
     <script>
         tailwind.config = {
@@ -22,18 +18,14 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#ff8b42",
-                        "background-light": "#f8f7f5",
-                        "background-dark": "#23170f",
+                        "dark-blue": "#0F2947",
+                        "medium-blue": "#1E3A5F",
+                        "orange": "#FF8C42",
+                        "light-bg": "#F5F5F5",
+                        "white": "#FFFFFF",
                     },
                     fontFamily: {
-                        "display": ["Lexend", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
+                        "sans": ["Poppins", "sans-serif"]
                     },
                 },
             },
@@ -43,69 +35,352 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.3s ease-out;
+        }
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display">
-    <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-        <main class="flex-grow flex flex-col">
-            <div class="flex-grow flex items-center justify-center">
-                <!-- HeroSection -->
-                <div class="w-full">
-                    <div class="@container">
-                        <div class="flex min-h-screen flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 items-center justify-center p-4"
-                            data-alt="A diverse group of university students collaborating and studying together around a wooden table in a well-lit library."
-                            style='background-image: linear-gradient(rgba(15, 41, 71, 0.6) 0%, rgba(15, 41, 71, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuClG5DRC-CpfRZw9OUK0nvIwO5kLIAe7VEpMvUFcmXeTFbTEGG-YOMhygxk6otses38iARM4BAHBaQhl4nnMaH8XA1gOIbK_tLWCQK3S8ryPzNdwLYHc5Quuf5Qo9WV2Qs3AdccEwlVrpw2qCTsPOyZ76O_ut16v0p9R-bMAiCKYJTkQFwV3e3HNY8V0Z6EHDOtdRBt1xSHTIK64Xd_H5pxVQwelbPrlJIh_ay8vTR9D1nGSZ3ZFch_YN3O-S5EzkVrdK4sKX4KyCM");'>
-                            <div class="flex items-center gap-3 text-white text-4xl font-bold">
-                                <span class="material-symbols-outlined text-5xl">school</span>
-                                <h1>KNOW<span class="text-primary">NET</span></h1>
-                            </div>
-                            <div class="flex flex-col gap-2 text-center max-w-2xl">
-                                <h2
-                                    class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl">
-                                    Aprende con los mejores estudiantes
-                                </h2>
-                                <p class="text-white text-sm font-normal leading-normal @[480px]:text-base">
-                                    De estudiantes para estudiantes, la plataforma está diseñada
-                                    para que todos mentores y estudiantes se beneficien de la
-                                    educación que pueden impartir o recibir de cualquier materia.
-                                </p>
-                            </div>
+<body class="bg-light-bg font-sans text-dark-blue">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <main class="flex-grow w-full">
+
+            <!-- Hero Section - Espaciado equilibrado -->
+            <div class="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat py-24 sm:py-32"
+                style='background-image: linear-gradient(rgba(15, 41, 71, 0.75) 0%, rgba(15, 41, 71, 0.75) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuClG5DRC-CpfRZw9OUK0nvIwO5kLIAe7VEpMvUFcmXeTFbTEGG-YOMhygxk6otses38iARM4BAHBaQhl4nnMaH8XA1gOIbK_tLWCQK3S8ryPzNdwLYHc5Quuf5Qo9WV2Qs3AdccEwlVrpw2qCTsPOyZ76O_ut16v0p9R-bMAiCKYJTkQFwV3e3HNY8V0Z6EHDOtdRBt1xSHTIK64Xd_H5pxVQwelbPrlJIh_ay8vTR9D1nGSZ3ZFch_YN3O-S5EzkVrdK4sKX4KyCM");'>
+
+                <div class="container mx-auto px-4 sm:px-6 text-center text-white">
+                    <div class="flex items-center justify-center gap-2 sm:gap-3 text-3xl sm:text-4xl font-bold mb-6">
+                        <span class="material-symbols-outlined text-4xl sm:text-5xl">school</span>
+                        <h1>KNOW<span class="text-orange">NET</span></h1>
+                    </div>
+
+                    <div class="max-w-3xl mx-auto mb-8 sm:mb-10">
+                        <h2
+                            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-4 sm:mb-6">
+                            Aprende con los mejores estudiantes
+                        </h2>
+                        <p class="text-white/90 text-base sm:text-lg font-normal leading-relaxed mb-6 sm:mb-8 px-4">
+                            Conectamos estudiantes universitarios para tutorías académicas. Ofrecemos sesiones
+                            personalizadas, recursos compartidos y una comunidad de aprendizaje para potenciar tu éxito.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center px-4">
+                        <button id="inicioSesion"
+                            class="flex items-center justify-center gap-2 rounded-full h-12 sm:h-14 px-6 sm:px-8 bg-medium-blue text-white text-base sm:text-lg font-bold hover:bg-[#2A4D7A] hover:scale-105 transition-all shadow-lg shadow-blue-900/50 w-full sm:w-auto">
+                            <span class="material-symbols-outlined">play_circle</span>
+                            <span>INICIAR SESIÓN</span>
+                        </button>
+                        <button
+                            class="flex items-center justify-center gap-2 rounded-full h-12 sm:h-14 px-6 sm:px-8 border-2 border-white bg-transparent text-white text-base sm:text-lg font-bold hover:bg-white hover:text-dark-blue hover:scale-105 transition-all w-full sm:w-auto">
+                            <span class="material-symbols-outlined">person_add</span>
+                            <span>REGISTRARSE</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Flecha abajo - oculta en mobile, mejor posicionada -->
+                <div
+                    class="hidden sm:block absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/50 animate-bounce">
+                    <span class="material-symbols-outlined text-4xl">keyboard_arrow_down</span>
+                </div>
+            </div>
+
+
+            <section class="py-16 sm:py-24 bg-white">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="text-center mb-12 sm:mb-16 max-w-2xl mx-auto">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-blue mb-4">Lo que ofrecemos</h2>
+                        <p class="text-gray-600 text-base sm:text-lg">Descubre todas las herramientas que KnowNet pone a
+                            tu disposición.</p>
+                    </div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                        <div
+                            class="bg-light-bg p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group cursor-default">
                             <div
-                                class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center w-full max-w-md px-4 sm:px-0">
-                                <button id="inicioSesion"
-                                    class="flex min-w-[84px] w-full sm:w-auto flex-1 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full h-12 px-6 bg-[#5B7FDB] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#4a6bbf] transition-colors">
-                                    <span class="material-symbols-outlined">play_circle</span>
-                                    <span class="truncate">INICIAR SESIÓN</span>
-                                </button>
-                                <button
-                                    class="flex min-w-[84px] w-full sm:w-auto flex-1 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full h-12 px-6 border border-white bg-transparent text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-white/10 transition-colors">
-                                    <span class="material-symbols-outlined">person_add</span>
-                                    <span class="truncate">REGISTRARSE</span>
-                                </button>
+                                class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:bg-orange transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-3xl text-orange group-hover:text-white transition-colors">school</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-3">Tutorías Pares</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm">Conecta con estudiantes de años superiores
+                                que ya aprobaron tus materias con excelencia y están listos para enseñarte.</p>
+                        </div>
+                        <div
+                            class="bg-light-bg p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group cursor-default">
+                            <div
+                                class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:bg-orange transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-3xl text-orange group-hover:text-white transition-colors">folder_shared</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-3">Recursos</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm">Accede a una biblioteca compartida de
+                                apuntes, resúmenes, guías de estudio y exámenes anteriores verificados.</p>
+                        </div>
+                        <div
+                            class="bg-light-bg p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group cursor-default">
+                            <div
+                                class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:bg-orange transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-3xl text-orange group-hover:text-white transition-colors">schedule</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-3">Sesiones Flexibles</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm">Coordina sesiones presenciales o virtuales
+                                en los horarios que mejor se adapten a tu carga académica.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="py-16 sm:py-24 bg-dark-blue text-white relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none overflow-hidden">
+                    <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-orange blur-[100px]"></div>
+                    <div
+                        class="absolute -bottom-24 -left-24 w-[500px] h-[500px] rounded-full bg-medium-blue blur-[100px]">
+                    </div>
+                </div>
+
+                <div class="container mx-auto px-4 sm:px-6 relative z-10">
+                    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+                        <div class="lg:w-1/2">
+                            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">¿Por qué elegir KnowNet?
+                            </h2>
+                            <p class="text-white/80 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed">
+                                Somos más que una plataforma de tutorías. Somos un ecosistema diseñado para potenciar tu
+                                vida universitaria, facilitando el intercambio de conocimiento de manera accesible,
+                                rápida y segura.
+                            </p>
+                            <div class="space-y-4 sm:space-y-6">
+                                <!-- beneficios -->
+                                <div class="flex gap-3 sm:gap-4 group">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/10 flex items-center justify-center text-orange group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-xl sm:text-2xl">verified_user</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg sm:text-xl font-bold mb-1">Confianza y Seguridad</h3>
+                                        <p class="text-white/70 text-xs sm:text-sm">Todos los tutores son verificados
+                                            académicamente.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-3 sm:gap-4 group">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/10 flex items-center justify-center text-orange group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-xl sm:text-2xl">savings</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg sm:text-xl font-bold mb-1">Precios Accesibles</h3>
+                                        <p class="text-white/70 text-xs sm:text-sm">Tarifas justas pensadas para el
+                                            presupuesto
+                                            estudiantil, sin comisiones ocultas.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-3 sm:gap-4 group">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/10 flex items-center justify-center text-orange group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-xl sm:text-2xl">rocket_launch</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg sm:text-xl font-bold mb-1">Impulso Académico</h3>
+                                        <p class="text-white/70 text-xs sm:text-sm">Herramientas de seguimiento para
+                                            monitorear tu
+                                            progreso y alcanzar tus metas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- estadisticas -->
+                        <div class="lg:w-1/2 w-full">
+                            <div
+                                class="bg-white/5 backdrop-blur-md rounded-3xl p-4 sm:p-6 md:p-8 border border-white/10 shadow-2xl hover:bg-white/10 transition-colors">
+                                <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                                    <div
+                                        class="bg-dark-blue/40 p-4 sm:p-6 rounded-2xl text-center border border-white/5">
+                                        <span class="block text-3xl sm:text-4xl font-bold text-orange mb-2">+10</span>
+                                        <span class="text-xs sm:text-sm text-white/80 font-medium">Facultades Asociadas
+                                            </span>
+                                    </div>
+                                    <div
+                                        class="bg-dark-blue/40 p-4 sm:p-6 rounded-2xl text-center border border-white/5">
+                                        <span class="block text-3xl sm:text-4xl font-bold text-orange mb-2">4.9</span>
+                                        <span class="text-xs sm:text-sm text-white/80 font-medium">Calificación de usuarios</span>
+                                    </div>
+                                    <div
+                                        class="bg-dark-blue/40 p-4 sm:p-6 rounded-2xl text-center border border-white/5">
+                                        <span class="block text-3xl sm:text-4xl font-bold text-orange mb-2">+3</span>
+                                        <span class="text-xs sm:text-sm text-white/80 font-medium">Materias Disponibles</span>
+                                    </div>
+                                    <div
+                                        class="bg-dark-blue/40 p-4 sm:p-6 rounded-2xl text-center border border-white/5">
+                                        <span class="block text-3xl sm:text-4xl font-bold text-orange mb-2">24/7</span>
+                                        <span class="text-xs sm:text-sm text-white/80 font-medium">Soporte</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Footer -->
-            <footer class="bg-background-light dark:bg-background-dark w-full">
-                <div class="max-w-[960px] mx-auto">
-                    <div class="flex flex-col gap-6 px-5 py-10 text-center">
-                        <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">
-                            KnowNet conecta estudiantes universitarios para tutorías académicas entre pares. Accede a
-                            sesiones personalizadas, recursos compartidos y
-                            una comunidad que aprende junta </p>
+            </section>
+
+
+            <section class="py-16 sm:py-24 bg-light-bg" id="contacto">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div
+                        class="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                        <div
+                            class="bg-medium-blue text-white p-12 md:w-2/5 flex flex-col justify-between relative overflow-hidden">
+                            <div
+                                class="absolute top-0 right-0 w-32 h-32 bg-orange opacity-20 rounded-full blur-2xl transform translate-x-10 -translate-y-10">
+                            </div>
+                            <div class="relative z-10">
+                                <h3 class="text-2xl font-bold mb-6">Información de Contacto</h3>
+                                <p class="text-white/80 mb-10 text-sm leading-relaxed">
+                                    ¿Tienes alguna duda, sugerencia o necesitas ayuda con tu cuenta? Estamos aquí para
+                                    ayudarte. Completa el formulario y nuestro equipo te responderá a la brevedad.
+                                </p>
+                                <div class="space-y-6">
+                                    <div class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-orange mt-1">mail</span>
+                                        <div>
+                                            <span
+                                                class="block text-xs text-white/50 uppercase tracking-wider font-semibold">Email</span>
+                                            <span class="text-sm font-medium">danny@knownet.edu</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-orange mt-1">call</span>
+                                        <div>
+                                            <span
+                                                class="block text-xs text-white/50 uppercase tracking-wider font-semibold">Teléfono</span>
+                                            <span class="text-sm font-medium">+593 98 765 4321</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-orange mt-1">location_on</span>
+                                        <div>
+                                            <span
+                                                class="block text-xs text-white/50 uppercase tracking-wider font-semibold">Ubicación</span>
+                                            <span class="text-sm font-medium">Escuela Superior Politécnica. ESPOL</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-12 md:w-3/5">
+                            <h3 class="text-2xl font-bold text-dark-blue mb-8">Envíanos un mensaje</h3>
+                            <form class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-dark-blue mb-2">Nombre</label>
+                                        <input
+                                            class="w-full px-4 py-3 rounded-xl bg-light-bg border-transparent focus:border-orange focus:bg-white focus:ring-2 focus:ring-orange/20 transition-all outline-none"
+                                            placeholder="Tu nombre" type="text" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-dark-blue mb-2">Apellido</label>
+                                        <input
+                                            class="w-full px-4 py-3 rounded-xl bg-light-bg border-transparent focus:border-orange focus:bg-white focus:ring-2 focus:ring-orange/20 transition-all outline-none"
+                                            placeholder="Tu apellido" type="text" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-dark-blue mb-2">Correo
+                                        Electrónico</label>
+                                    <input
+                                        class="w-full px-4 py-3 rounded-xl bg-light-bg border-transparent focus:border-orange focus:bg-white focus:ring-2 focus:ring-orange/20 transition-all outline-none"
+                                        placeholder="ejemplo@correo.com" type="email" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-dark-blue mb-2">Mensaje</label>
+                                    <textarea
+                                        class="w-full px-4 py-3 rounded-xl bg-light-bg border-transparent focus:border-orange focus:bg-white focus:ring-2 focus:ring-orange/20 transition-all outline-none resize-none"
+                                        placeholder="¿En qué podemos ayudarte?" rows="4"></textarea>
+                                </div>
+                                <button
+                                    class="w-full py-4 bg-orange text-white font-bold rounded-xl hover:bg-orange/90 transform hover:-translate-y-1 transition-all shadow-lg shadow-orange/20 flex items-center justify-center gap-2"
+                                    type="button">
+                                    <span>Enviar Mensaje</span>
+                                    <span class="material-symbols-outlined text-lg">send</span>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </footer>
+            </section>
         </main>
+        <footer class="bg-dark-blue w-full text-white">
+            <div class="container mx-auto px-6 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                    <div class="md:col-span-1">
+                        <a class="flex items-center gap-2 text-2xl font-bold mb-4" href="#">
+                            <span class="material-symbols-outlined text-3xl">school</span>
+                            <span>KNOW<span class="text-orange">NET</span></span>
+                        </a>
+                        <p class="text-white/70 text-sm leading-relaxed mb-6">
+                            Conectamos estudiantes universitarios para tutorías académicas.
+                        </p>
+                    </div>
+                    <div class="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="font-bold text-white mb-4">Plataforma</h3>
+                            <ul class="space-y-3 text-sm text-white/70">
+                                <li><a class="hover:text-orange transition-colors" href="#">Inicio</a></li>
+                                <li><a class="hover:text-orange transition-colors" href="#">Facultades</a></li>
+                                <li><a class="hover:text-orange transition-colors" href="#">Materias Básicas</a></li>
+                                <li><a class="hover:text-orange transition-colors" href="#">Opiniones</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white mb-4">Cuenta</h3>
+                            <ul class="space-y-3 text-sm text-white/70">
+                                <li><a class="hover:text-orange transition-colors" href="#">Mi Perfil</a></li>
+                                <li><a class="hover:text-orange transition-colors" href="#">Iniciar Sesión</a></li>
+                                <li><a class="hover:text-orange transition-colors" href="#">Registrarse</a></li>
+                                <li><a class="hover:text-orange transition-colors" href="#contacto">Ayuda</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white mb-4">Legal</h3>
+                            <ul class="space-y-3 text-sm text-white/70">
+                                <li><a class="hover:text-orange transition-colors" href="#">Términos de Uso</a></li>
+                                <li><a class="hover:text-orange transition-colors" href="#">Política de Privacidad</a>
+                                </li>
+                                <li><a class="hover:text-orange transition-colors" href="#">Normas de la Comunidad</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="mt-12 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
+                    <p>© 2024 KnowNet. Todos los derechos reservados.</p>
+                    <div class="flex gap-6">
+                        <a class="hover:text-white transition-colors" href="#">Privacidad</a>
+                        <a class="hover:text-white transition-colors" href="#">Términos</a>
+                        <a class="hover:text-white transition-colors" href="#">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
     <div id="modal-overlay"
         class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-opacity duration-300">
-
     </div>
-
 </body>
 <script type="module" src="src/js/incioSesionAlert.js"></script>
 

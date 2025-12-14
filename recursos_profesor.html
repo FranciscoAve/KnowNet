@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Recursos del Profesor: Ana Pérez - KnowNet</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "azul-oscuro": "#0F2947",
+                        "azul-medio": "#1E3A5F",
+                        "naranja": "#FF8C42",
+                        "fondo": "#F5F5F5",
+                        "blanco": "#FFFFFF",
+                        "primary": "#FF8C42",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#0F2947",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1E3A5F",
+                        "text-light": "#0F2947",
+                        "text-dark": "#F5F5F5",
+                        "text-secondary-light": "#1E3A5F",
+                        "text-secondary-dark": "#aeb7c4",
+
+                        "text-light-primary": "#0F2947",
+                        "text-dark-primary": "#f5f5f5",
+
+                        "text-light-secondary": "#1E3A5F",
+                        "text-dark-secondary": "#aeb7c4",
+                        "secondary": "#0F2947", // Dark Blue from request
+                        "card-bg": "#FFFFFF",
+                        "tertiary": "#1E3A5F",
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"],
+                        "body": ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- TopNavBar -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-6 lg:px-10 py-3 bg-blanco/80 backdrop-blur-sm sticky top-0 z-10 rounded-xl">
+                <div id="btnToPrincipal"
+                    class="flex items-center gap-2 sm:gap-4 text-azul-oscuro cursor-pointer hover:text-naranja transition-all duration-300 active:scale-95">
+                    <span class="material-symbols-outlined unfilled text-primary text-3xl">school</span>
+                    <h2 class="text-azul-oscuro text-base sm:text-lg font-bold leading-tight tracking-[-0.015em]">
+                        KnowNet</h2>
+                </div>
+
+                <nav class="hidden md:flex items-center gap-3 lg:gap-6">
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="dashboardP.html">Inicio</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="materias.html">Materias</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="recursos.html">Recursos</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="servicios.html">Planes</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Right Side: Profile + Hamburger -->
+                <div class="flex items-center gap-4">
+                    <!-- Profile Icon (Desktop - visible desde md) -->
+                    <button id="btn-perfil"
+                        class="hidden md:flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-azul-oscuro text-white hover:bg-naranja transition-all duration-300 cursor-pointer">
+                        <span class="material-symbols-outlined text-xl">person</span>
+                    </button>
+
+                    <!-- Hamburger Button (Mobile - oculto desde md) -->
+                    <button id="hamburger-btn"
+                        class="md:hidden flex items-center justify-center w-10 h-10 text-azul-oscuro hover:text-naranja transition-colors">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Mobile Menu (Overlay - oculto desde md) -->
+            <div id="mobile-menu"
+                class="fixed inset-0 bg-azul-oscuro/95 backdrop-blur-sm z-40 md:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+
+                <!-- Close Button -->
+                <button id="close-menu-btn"
+                    class="absolute top-6 right-6 text-white hover:text-naranja transition-colors">
+                    <span class="material-symbols-outlined text-4xl">close</span>
+                </button>
+
+                <!-- Mobile Navigation -->
+                <nav class="flex flex-col items-center justify-center h-full gap-8 px-8">
+                    <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                        href="dashboardP.html">Inicio</a>
+                    <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                        href="materias.html">Materias</a>
+                    <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                        href="recursos.html">Recursos</a>
+                    <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                        href="servicios.html">Planes y Precios</a>
+                    <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                        href="contacto.html">Contacto</a>
+
+                    <!-- Divider -->
+                    <div class="w-full border-t border-white/20 my-4"></div>
+
+                    <!-- Profile Link in Mobile -->
+                    <a id="mobile-perfil"
+                        class="flex items-center gap-3 text-white hover:text-naranja text-xl font-semibold transition-colors cursor-pointer"
+                        href="perfil.html">
+                        <span class="material-symbols-outlined text-3xl">person</span>
+                        <span>Mi Perfil</span>
+                    </a>
+                </nav>
+            </div>
+            <!-- Main Content -->
+            <main class="flex-grow">
+                <!-- Breadcrumbs & Header -->
+                <div class="bg-white dark:bg-tertiary border-b border-gray-200 dark:border-gray-700">
+                    <div class="max-w-[1280px] mx-auto px-4 md:px-8 py-6">
+                        <!-- Professor Header Info -->
+                        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                            <div class="flex gap-5">
+                                <div class="h-20 w-20 md:h-24 md:w-24 rounded-xl bg-gray-200 bg-cover bg-center shadow-md flex-shrink-0"
+                                    data-alt="Portrait of Professor Ana Perez in professional attire"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-6unpy_LzyWd_gAX2mHFkxdvy_fYjIz3JZ0e5arR-lhhSaKQPAPUGWz8QrS_n25j-1v684ttJdZzsL0stPcG2ymejOfXxtw3NmL2XJlFO4r9HU_IlUkwkUVZVpYrNjVlEO7I2HczKj_Vzigbt1g0DNAUUR4ddlp9NWWXeyuAU0ABU65CDRo6cQy5T3oniN2u6rN75ywLaVzDLY5aYSJwpxwtA1e_U4e_maMjjZe2BOk5fcfMavC3czSEm5sX9eo0e7BuzNGrMZvg");'>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span
+                                            class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs px-2 py-0.5 rounded-full font-semibold">Departamento
+                                            de Matemáticas</span>
+                                    </div>
+                                    <h1
+                                        class="text-2xl md:text-4xl font-bold text-secondary dark:text-white mb-2 tracking-tight">
+                                        Recursos del Profesor: Ana Pérez</h1>
+                                    <p
+                                        class="text-gray-600 dark:text-gray-300 max-w-2xl text-sm md:text-base leading-relaxed">
+                                        Accede a una colección de materiales para Cálculo de una Variable. Aquí
+                                        encontrarás mis apuntes oficiales, grabaciones de clases y guías de preparación
+                                        para
+                                        exámenes.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <button
+                                    class="flex items-center gap-2 bg-primary hover:bg-orange-600 text-white px-5 py-2.5 rounded-lg font-medium shadow-md shadow-orange-200 dark:shadow-none transition-all">
+                                    <span class="material-symbols-outlined text-[20px]">mail</span>
+                                    Contactar
+                                </button>
+                                <button
+                                    class="flex items-center justify-center w-10 h-10 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-[1280px] mx-auto px-4 md:px-8 py-8 space-y-12">
+                    <!-- Section 1: PDF Notes -->
+                    <section>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-2xl">description</span>
+                                <h2 class="text-xl md:text-2xl font-bold text-secondary dark:text-white">Apuntes (PDFs)
+                                </h2>
+                            </div>
+                            <a class="text-sm font-medium text-primary hover:text-orange-600 flex items-center gap-1 transition-colors"
+                                href="#">
+                                Ver todos <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                            </a>
+                        </div>
+                        <!-- Horizontal Scroll Container -->
+                        <div class="relative group/scroll">
+                            <!-- Scroll Buttons (Optional enhancement for UX) -->
+                            <button
+                                class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 bg-white dark:bg-tertiary shadow-lg rounded-full items-center justify-center text-gray-600 dark:text-white opacity-0 group-hover/scroll:opacity-100 transition-opacity disabled:opacity-0">
+                                <span class="material-symbols-outlined">chevron_left</span>
+                            </button>
+                            <div
+                                class="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide snap-x">
+                                <!-- Card 1 -->
+                                <div class="min-w-[260px] max-w-[260px] snap-start">
+                                    <article
+                                        class="bg-card-bg dark:bg-tertiary rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden h-full flex flex-col">
+                                        <div
+                                            class="relative h-32 bg-red-50 dark:bg-red-900/20 flex items-center justify-center border-b border-gray-100 dark:border-gray-700">
+                                            <span
+                                                class="material-symbols-outlined text-6xl text-red-500 opacity-80">picture_as_pdf</span>
+                                            <div
+                                                class="absolute top-2 right-2 bg-white/90 dark:bg-black/50 px-2 py-0.5 rounded text-xs font-mono text-gray-600 dark:text-gray-300">
+                                                2.4 MB</div>
+                                        </div>
+                                        <div class="p-4 flex flex-col flex-1">
+                                            <span class="text-xs font-semibold text-red-500 mb-1">Cálculo
+                                                I</span>
+                                            <h3 class="font-bold text-secondary dark:text-white mb-2 line-clamp-2">
+                                                Semana 4:
+                                                Regla de la cadena</h3>
+                                            <p
+                                                class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2 flex-1">
+                                                Notas
+                                                de clase completas con ejercicios resueltos paso a paso.</p>
+                                            <button
+                                                class="w-full mt-auto flex items-center justify-center gap-2 py-2 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 dark:bg-red-900/30 dark:text-red-300 transition-colors text-sm font-medium">
+                                                <span class="material-symbols-outlined text-[18px]">download</span>
+                                                Descargar
+                                            </button>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- Card 2 -->
+                                <div class="min-w-[260px] max-w-[260px] snap-start">
+                                    <article
+                                        class="bg-card-bg dark:bg-tertiary rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden h-full flex flex-col">
+                                        <div
+                                            class="relative h-32 bg-red-50 dark:bg-red-900/20 flex items-center justify-center border-b border-gray-100 dark:border-gray-700">
+                                            <span
+                                                class="material-symbols-outlined text-6xl text-red-500 opacity-80">picture_as_pdf</span>
+                                            <div
+                                                class="absolute top-2 right-2 bg-white/90 dark:bg-black/50 px-2 py-0.5 rounded text-xs font-mono text-gray-600 dark:text-gray-300">
+                                                1.8 MB</div>
+                                        </div>
+                                        <div class="p-4 flex flex-col flex-1">
+                                            <span class="text-xs font-semibold text-red-500 mb-1">Calculo I</span>
+                                            <h3 class="font-bold text-secondary dark:text-white mb-2 line-clamp-2">
+                                                Límites Algebraicos</h3>
+                                            <p
+                                                class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2 flex-1">
+                                                Resumen
+                                                teórico con propiedades fundamentales.</p>
+                                            <button
+                                                class="w-full mt-auto flex items-center justify-center gap-2 py-2 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 dark:bg-red-900/30 dark:text-red-300 transition-colors text-sm font-medium">
+                                                <span class="material-symbols-outlined text-[18px]">download</span>
+                                                Descargar
+                                            </button>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- Card 3 -->
+                                <div class="min-w-[260px] max-w-[260px] snap-start">
+                                    <article
+                                        class="bg-card-bg dark:bg-tertiary rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden h-full flex flex-col">
+                                        <div
+                                            class="relative h-32 bg-red-50 dark:bg-red-900/20 flex items-center justify-center border-b border-gray-100 dark:border-gray-700">
+                                            <span
+                                                class="material-symbols-outlined text-6xl text-red-500 opacity-80">picture_as_pdf</span>
+                                            <div
+                                                class="absolute top-2 right-2 bg-white/90 dark:bg-black/50 px-2 py-0.5 rounded text-xs font-mono text-gray-600 dark:text-gray-300">
+                                                3.2 MB</div>
+                                        </div>
+                                        <div class="p-4 flex flex-col flex-1">
+                                            <span class="text-xs font-semibold text-red-500 mb-1">Cálculo
+                                                I</span>
+                                            <h3 class="font-bold text-secondary dark:text-white mb-2 line-clamp-2">
+                                                Aplicaciones
+                                                de la Integral</h3>
+                                            <p
+                                                class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2 flex-1">
+                                                Cálculo
+                                                de áreas, volúmenes y longitud de arco.</p>
+                                            <button
+                                                class="w-full mt-auto flex items-center justify-center gap-2 py-2 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 dark:bg-red-900/30 dark:text-red-300 transition-colors text-sm font-medium">
+                                                <span class="material-symbols-outlined text-[18px]">download</span>
+                                                Descargar
+                                            </button>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- Card 4 -->
+                                <div class="min-w-[260px] max-w-[260px] snap-start">
+                                    <article
+                                        class="bg-card-bg dark:bg-tertiary rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden h-full flex flex-col">
+                                        <div
+                                            class="relative h-32 bg-red-50 dark:bg-red-900/20 flex items-center justify-center border-b border-gray-100 dark:border-gray-700">
+                                            <span
+                                                class="material-symbols-outlined text-6xl text-red-500 opacity-80">picture_as_pdf</span>
+                                            <div
+                                                class="absolute top-2 right-2 bg-white/90 dark:bg-black/50 px-2 py-0.5 rounded text-xs font-mono text-gray-600 dark:text-gray-300">
+                                                1.1 MB</div>
+                                        </div>
+                                        <div class="p-4 flex flex-col flex-1">
+                                            <span class="text-xs font-semibold text-red-500 mb-1">Cálculo I</span>
+                                            <h3 class="font-bold text-secondary dark:text-white mb-2 line-clamp-2">
+                                                Espacios Métricos</h3>
+                                            <p
+                                                class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2 flex-1">
+                                                Introducción a subespacios.</p>
+                                            <button
+                                                class="w-full mt-auto flex items-center justify-center gap-2 py-2 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 dark:bg-red-900/30 dark:text-red-300 transition-colors text-sm font-medium">
+                                                <span class="material-symbols-outlined text-[18px]">download</span>
+                                                Descargar
+                                            </button>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <button
+                                class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 bg-white dark:bg-tertiary shadow-lg rounded-full items-center justify-center text-gray-600 dark:text-white opacity-0 group-hover/scroll:opacity-100 transition-opacity">
+                                <span class="material-symbols-outlined">chevron_right</span>
+                            </button>
+                        </div>
+                    </section>
+                    <!-- Section 2: Videos -->
+                    <section>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-2xl">play_circle</span>
+                                <h2 class="text-xl md:text-2xl font-bold text-secondary dark:text-white">Videos</h2>
+                            </div>
+                            <a class="text-sm font-medium text-primary hover:text-orange-600 flex items-center gap-1 transition-colors"
+                                href="#">
+                                Ver todos <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                            </a>
+                        </div>
+                        <div class="relative group/scroll">
+                            <!-- Scroll Buttons -->
+                            <button
+                                class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 bg-white dark:bg-tertiary shadow-lg rounded-full items-center justify-center text-gray-600 dark:text-white opacity-0 group-hover/scroll:opacity-100 transition-opacity disabled:opacity-0">
+                                <span class="material-symbols-outlined">chevron_left</span>
+                            </button>
+                            <div
+                                class="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide snap-x">
+                                <!-- Video Card 1 -->
+                                <div class="min-w-[300px] max-w-[300px] snap-start">
+                                    <article
+                                        class="bg-card-bg dark:bg-tertiary rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden h-full flex flex-col group/video">
+                                        <div class="relative h-40 bg-gray-200 bg-cover bg-center"
+                                            data-alt="Abstract mathematical graph background for video thumbnail"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfG_VuIFxbw32kZbGZtBBzbKirnZnRiB8acVII_Jd8HXKrzEv0Hbb_cZ-cXFzCBH1yU6CZcPE6aIOAhYAI33Lc_2vXWnb4PsnGhCLJs1onYzfmBhAaPAnxc9re5H8HE59hERJyNfQWjkvlfPxeuH3ZGmBvZqQKIP_MHgp3dItKu1o21U0OOPRwUh85bdeFD_N39BhldTa4BULXNIsm2uCWQgKtY0iK8VMgp_2dfGhbAdkIvcopMTyuj_D-vCbhKwBkXccAoPwvdxM");'>
+                                            <div
+                                                class="absolute inset-0 bg-black/30 group-hover/video:bg-black/20 transition-colors">
+                                            </div>
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <div
+                                                    class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover/video:scale-110 transition-transform">
+                                                    <span
+                                                        class="material-symbols-outlined text-white text-3xl">play_arrow</span>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="absolute bottom-2 right-2 bg-black/70 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
+                                                15:42</div>
+                                        </div>
+                                        <div class="p-4 flex flex-col flex-1">
+                                            <h3 class="font-bold text-secondary dark:text-white mb-1 line-clamp-2">
+                                                Límites y continuidad</h3>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Subido hace 2 días
+                                            </p>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- Video Card 2 -->
+                                <div class="min-w-[300px] max-w-[300px] snap-start">
+                                    <article
+                                        class="bg-card-bg dark:bg-tertiary rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden h-full flex flex-col group/video">
+                                        <div class="relative h-40 bg-gray-200 bg-cover bg-center"
+                                            data-alt="Close up of hand writing algebra equations on paper"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfG_VuIFxbw32kZbGZtBBzbKirnZnRiB8acVII_Jd8HXKrzEv0Hbb_cZ-cXFzCBH1yU6CZcPE6aIOAhYAI33Lc_2vXWnb4PsnGhCLJs1onYzfmBhAaPAnxc9re5H8HE59hERJyNfQWjkvlfPxeuH3ZGmBvZqQKIP_MHgp3dItKu1o21U0OOPRwUh85bdeFD_N39BhldTa4BULXNIsm2uCWQgKtY0iK8VMgp_2dfGhbAdkIvcopMTyuj_D-vCbhKwBkXccAoPwvdxM");'>
+                                            <div
+                                                class="absolute inset-0 bg-black/30 group-hover/video:bg-black/20 transition-colors">
+                                            </div>
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <div
+                                                    class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover/video:scale-110 transition-transform">
+                                                    <span
+                                                        class="material-symbols-outlined text-white text-3xl">play_arrow</span>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="absolute bottom-2 right-2 bg-black/70 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
+                                                42:10</div>
+                                        </div>
+                                        <div class="p-4 flex flex-col flex-1">
+                                            <h3 class="font-bold text-secondary dark:text-white mb-1 line-clamp-2">
+                                                Derivadas de orden superior</h3>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Subido hace 1
+                                                semana</p>
+                                            </div>
+                                    </article>
+                                </div>
+                                <!-- Video Card 3 -->
+                                <div class="min-w-[300px] max-w-[300px] snap-start">
+                                    <article
+                                        class="bg-card-bg dark:bg-tertiary rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden h-full flex flex-col group/video">
+                                        <div class="relative h-40 bg-gray-200 bg-cover bg-center"
+                                            data-alt="Chalkboard full of complex mathematical formulas"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfG_VuIFxbw32kZbGZtBBzbKirnZnRiB8acVII_Jd8HXKrzEv0Hbb_cZ-cXFzCBH1yU6CZcPE6aIOAhYAI33Lc_2vXWnb4PsnGhCLJs1onYzfmBhAaPAnxc9re5H8HE59hERJyNfQWjkvlfPxeuH3ZGmBvZqQKIP_MHgp3dItKu1o21U0OOPRwUh85bdeFD_N39BhldTa4BULXNIsm2uCWQgKtY0iK8VMgp_2dfGhbAdkIvcopMTyuj_D-vCbhKwBkXccAoPwvdxM");'>
+                                            <div
+                                                class="absolute inset-0 bg-black/30 group-hover/video:bg-black/20 transition-colors">
+                                            </div>
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <div
+                                                    class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover/video:scale-110 transition-transform">
+                                                    <span
+                                                        class="material-symbols-outlined text-white text-3xl">play_arrow</span>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="absolute bottom-2 right-2 bg-black/70 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
+                                                28:05</div>
+                                        </div>
+                                        <div class="p-4 flex flex-col flex-1">
+                                            <h3 class="font-bold text-secondary dark:text-white mb-1 line-clamp-2">
+                                                Repaso Examen I parcial</h3>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Subido hace 3
+                                                semanas</p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <button
+                                class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 bg-white dark:bg-tertiary shadow-lg rounded-full items-center justify-center text-gray-600 dark:text-white opacity-0 group-hover/scroll:opacity-100 transition-opacity">
+                                <span class="material-symbols-outlined">chevron_right</span>
+                            </button>
+                        </div>
+                    </section>
+                    <!-- Section 3: Guides -->
+                    <section>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-2xl">book</span>
+                                <h2 class="text-xl md:text-2xl font-bold text-secondary dark:text-white">Guías de
+                                    Estudio</h2>
+                            </div>
+                            <a class="text-sm font-medium text-primary hover:text-orange-600 flex items-center gap-1 transition-colors"
+                                href="#">
+                                Ver todos <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                            </a>
+                        </div>
+                        <div class="relative group/scroll">
+                            <div
+                                class="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide snap-x">
+                                <!-- Guide Card 1 -->
+                                <div class="min-w-[280px] max-w-[280px] snap-start">
+                                    <article
+                                        class="bg-card-bg dark:bg-tertiary rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden h-full flex flex-row items-stretch">
+                                        <div class="w-2 bg-green-500"></div>
+                                        <div class="p-4 flex flex-col flex-1">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <span
+                                                    class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Examen</span>
+                                                <span
+                                                    class="material-symbols-outlined text-gray-400 text-lg">bookmark</span>
+                                            </div>
+                                            <h3 class="font-bold text-secondary dark:text-white mb-2 line-clamp-2">Guía
+                                                para el
+                                                Parcial 1</h3>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4 flex-1">Contiene
+                                                temario
+                                                completo y lista de ejercicios recomendados.</p>
+                                            <a class="text-sm font-medium text-green-600 hover:text-green-700 dark:text-green-400 flex items-center gap-1 mt-auto"
+                                                href="#">
+                                                Abrir guía <span
+                                                    class="material-symbols-outlined text-[16px]">open_in_new</span>
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- Guide Card 2 -->
+                                <div class="min-w-[280px] max-w-[280px] snap-start">
+                                    <article
+                                        class="bg-card-bg dark:bg-tertiary rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden h-full flex flex-row items-stretch">
+                                        <div class="w-2 bg-blue-500"></div>
+                                        <div class="p-4 flex flex-col flex-1">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <span
+                                                    class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Práctica</span>
+                                                <span
+                                                    class="material-symbols-outlined text-gray-400 text-lg">bookmark</span>
+                                            </div>
+                                            <h3 class="font-bold text-secondary dark:text-white mb-2 line-clamp-2">
+                                                Problemario
+                                                Resuelto</h3>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4 flex-1">50
+                                                ejercicios de
+                                                integración resueltos para practicar.</p>
+                                            <a class="text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 flex items-center gap-1 mt-auto"
+                                                href="#">
+                                                Abrir guía <span
+                                                    class="material-symbols-outlined text-[16px]">open_in_new</span>
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- Guide Card 3 -->
+                                <div class="min-w-[280px] max-w-[280px] snap-start">
+                                    <article
+                                        class="bg-card-bg dark:bg-tertiary rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden h-full flex flex-row items-stretch">
+                                        <div class="w-2 bg-purple-500"></div>
+                                        <div class="p-4 flex flex-col flex-1">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <span
+                                                    class="bg-purple-100 text-purple-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Teoría</span>
+                                                <span
+                                                    class="material-symbols-outlined text-gray-400 text-lg">bookmark</span>
+                                            </div>
+                                            <h3 class="font-bold text-secondary dark:text-white mb-2 line-clamp-2">
+                                                Fórmulas
+                                                Esenciales</h3>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4 flex-1">Hoja de
+                                                trucos con
+                                                todas las fórmulas de derivadas e integrales.</p>
+                                            <a class="text-sm font-medium text-purple-600 hover:text-purple-700 dark:text-purple-400 flex items-center gap-1 mt-auto"
+                                                href="#">
+                                                Abrir guía <span
+                                                    class="material-symbols-outlined text-[16px]">open_in_new</span>
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Section 4: Blogs -->
+                    <section>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-2xl">article</span>
+                                <h2 class="text-xl md:text-2xl font-bold text-secondary dark:text-white">Blogs &amp;
+                                    Lecturas
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Blog Card 1 -->
+                            <article
+                                class="flex flex-col sm:flex-row gap-4 bg-white dark:bg-tertiary rounded-xl p-4 border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-colors cursor-pointer shadow-sm hover:shadow-md">
+                                <div class="w-full sm:w-32 h-32 rounded-lg bg-cover bg-center shrink-0"
+                                    data-alt="Electronic circuit board representing real world engineering applications"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUIWKRHxd9c9W9lu_CTyUp1NzejABsJtI2RKnVsPHCgic61QmLpEiGQ_zoNKoZ2rrjPIVt94LRLFVjIrLF_Ion7w0Q-mdg0PzyajccSMS3lZ6uXnO2oguuysxboEkomgYULrJW0c-hu9C7NdtN8ACl2f_Vz3SSkV1y9VBlHxaeoO-hc2SV4XRns7abqD3HuKOD0vpwxv0UPIRJWtuoVZdqNwoZxOGNFmUNH702Qnjs9jRgNX7Y_IAkq8uKQHKPOOOmU5UgvZwDGXg");'>
+                                </div>
+                                <div class="flex flex-col justify-between">
+                                    <div>
+                                        <h3 class="font-bold text-lg text-secondary dark:text-white mb-2">Aplicaciones
+                                            de la
+                                            ingeniería en la vida real</h3>
+                                        <p class="text-sm text-gray-500 dark:text-gray-300 line-clamp-2">Descubre cómo
+                                            los
+                                            conceptos de cálculo que aprendemos en clase se aplican directamente en el
+                                            diseño de
+                                            circuitos y estructuras modernas.</p>
+                                    </div>
+                                    <div class="flex items-center gap-4 mt-3">
+                                        <span class="text-xs text-gray-400">12 Oct 2023</span>
+                                        <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                                        <span class="text-xs text-primary font-medium">Lectura de 5 min</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- Blog Card 2 -->
+                            <article
+                                class="flex flex-col sm:flex-row gap-4 bg-white dark:bg-tertiary rounded-xl p-4 border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-colors cursor-pointer shadow-sm hover:shadow-md">
+                                <div class="w-full sm:w-32 h-32 rounded-lg bg-cover bg-center shrink-0"
+                                    data-alt="Student studying with focus representing study tips"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAji8wLU1WpKwBy-lKEaVVvnVYBmwb-V8zjk6NfWYaSQpbegJ2oQ3rN_UsyAxOSxR1meglSSV7hAkvq4B5cfpvnWiQTRFyAsYht9p49kToCujFxibQ0pPn77td6HXXULXW2ljWYSqV11AE-HZtALmMDcYbzBtXiULWHYs2NyZ2nXFzlDMnllkS-OMA6SqZE2iCStooam2v40Ek2otR2FS6Tub980wxdOeBHrM5weZfB2wm59D1sllEw3EUqHWOykY8LdNDVe32XwTE");'>
+                                </div>
+                                <div class="flex flex-col justify-between">
+                                    <div>
+                                        <h3 class="font-bold text-lg text-secondary dark:text-white mb-2">Consejos para
+                                            estudiar
+                                            matemáticas eficientemente</h3>
+                                        <p class="text-sm text-gray-500 dark:text-gray-300 line-clamp-2">Estrategias
+                                            probadas
+                                            para mejorar tu retención y comprensión de problemas complejos sin quemarte
+                                            en el
+                                            intento.</p>
+                                    </div>
+                                    <div class="flex items-center gap-4 mt-3">
+                                        <span class="text-xs text-gray-400">05 Oct 2023</span>
+                                        <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                                        <span class="text-xs text-primary font-medium">Lectura de 8 min</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <!-- Footer -->
+            <footer class="flex flex-col gap-6 px-5 py-10 text-center mt-12 border-t border-gray-200">
+                <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="dashboardP.html">Inicio</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="materias.html">Materias</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="recursos.html">Recursos</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="servicios.html">Planes</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="contacto.html">Contacto</a>
+                    <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                        data-page="perfil.html">Mi Perfil</a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a aria-label="Facebook" class="text-azul-medio hover:text-naranja" href="#">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a aria-label="Twitter" class="text-azul-medio hover:text-naranja" href="#">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M22 4s-.7 2.1-2 3.4c1.6 1.4 3.3 4.9 3.3 4.9-6.1-1.4-12.1-4.1-16.2-8.1-1.4 1.2-2.4 2.8-2.4 4.5 0 2.3 1.2 4.3 2.9 5.5-1.1 0-2.2-.3-3.1-.9v.1c0 3.2 2.3 5.8 5.3 6.4-.5.1-1.1.2-1.6.2-.4 0-.8 0-1.2-.1.8 2.6 3.3 4.5 6.1 4.5-2.2 1.7-5.1 2.8-8.2 2.8-.5 0-1.1 0-1.6-.1 2.9 1.9 6.4 3 10.1 3 12.1 0 18.7-10 18.7-18.7v-.8c1.3-1 2.3-2.1 3.2-3.4z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a aria-label="Instagram" class="text-azul-medio hover:text-naranja" href="#">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-azul-medio text-sm font-normal leading-normal">© 2024 KnowNet. Todos los derechos
+                    reservados.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script type="module" src="src/js/dashboardP.js"></script>
+</body>
+
+</html>
