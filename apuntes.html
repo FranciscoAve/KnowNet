@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Documentos por Materia - KnowNet</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        kn: {
+                            dark: "#0F2947",   // Azul oscuro
+                            medium: "#1E3A5F", // Azul medio
+                            orange: "#FF8C42", // Naranja
+                            bg: "#F5F5F5",     // Fondo general
+                            white: "#FFFFFF",  // Blanco componentes
+                        },
+
+                        "azul-oscuro": "#0F2947",
+                        "azul-medio": "#1E3A5F",
+                        "naranja": "#FF8C42",
+                        "fondo": "#F5F5F5",
+                        "blanco": "#FFFFFF",
+                        "primary": "#FF8C42",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#0F2947",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1E3A5F",
+                        "text-light": "#0F2947",
+                        "text-dark": "#F5F5F5",
+                        "text-secondary-light": "#1E3A5F",
+                        "text-secondary-dark": "#aeb7c4",
+
+                        "text-light-primary": "#0F2947",
+                        "text-dark-primary": "#f5f5f5",
+
+                        "text-light-secondary": "#1E3A5F",
+                        "text-dark-secondary": "#aeb7c4",
+
+                    },
+                    fontFamily: {
+                        "sans": ["Poppins", "sans-serif"]
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(15, 41, 71, 0.05)',
+                        'hover': '0 10px 25px -5px rgba(15, 41, 71, 0.1)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1">
+
+                    <!-- TopNavBar -->
+                    <header
+                        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-6 lg:px-10 py-3 bg-blanco/80 backdrop-blur-sm sticky top-0 z-50 rounded-xl mb-6">
+                        <div id="btnToPrincipal"
+                            class="flex items-center gap-2 sm:gap-4 text-azul-oscuro cursor-pointer hover:text-naranja transition-all duration-300 active:scale-95">
+                            <span class="material-symbols-outlined text-primary text-3xl">school</span>
+                            <h2
+                                class="text-azul-oscuro text-base sm:text-lg font-bold leading-tight tracking-[-0.015em]">
+                                KnowNet</h2>
+                        </div>
+
+                        <nav class="hidden md:flex items-center gap-3 lg:gap-6">
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="dashboardP.html">Inicio</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="materias.html">Materias</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="recursos.html">Recursos</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors whitespace-nowrap cursor-pointer"
+                                data-page="contacto.html">Contacto</a>
+                        </nav>
+
+                        <div class="flex items-center gap-4">
+                            <button id="btn-perfil"
+                                class="hidden md:flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-azul-oscuro text-white hover:bg-naranja transition-all duration-300 cursor-pointer">
+                                <span class="material-symbols-outlined text-xl">person</span>
+                            </button>
+                            <button id="hamburger-btn"
+                                class="md:hidden flex items-center justify-center w-10 h-10 text-azul-oscuro hover:text-naranja transition-colors">
+                                <span class="material-symbols-outlined text-3xl">menu</span>
+                            </button>
+                        </div>
+                    </header>
+
+                    <!-- Mobile Menu -->
+                    <div id="mobile-menu"
+                        class="fixed inset-0 bg-azul-oscuro/95 backdrop-blur-sm z-40 md:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+                        <button id="close-menu-btn"
+                            class="absolute top-6 right-6 text-white hover:text-naranja transition-colors">
+                            <span class="material-symbols-outlined text-4xl">close</span>
+                        </button>
+                        <nav class="flex flex-col items-center justify-center h-full gap-8 px-8">
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="dashboardP.html">Inicio</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="materias.html">Materias</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="recursos.html">Recursos</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="servicios.html">Planes y Precios</a>
+                            <a class="text-white hover:text-naranja text-2xl font-semibold transition-colors"
+                                href="contacto.html">Contacto</a>
+                            <div class="w-full border-t border-white/20 my-4"></div>
+                            <a id="mobile-perfil"
+                                class="flex items-center gap-3 text-white hover:text-naranja text-xl font-semibold transition-colors cursor-pointer"
+                                href="perfil.html">
+                                <span class="material-symbols-outlined text-3xl">person</span>
+                                <span>Mi Perfil</span>
+                            </a>
+                        </nav>
+                    </div>
+
+                    <main class="container mx-auto w-full max-w-7xl flex-1 px-4 py-8 md:py-12">
+                        <div class="mb-10 flex flex-col gap-4 border-b border-gray-200 pb-8">
+                            <h1 class="text-3xl font-bold tracking-tight text-kn-dark md:text-5xl">Documentos de
+                                Estudio</h1>
+                            <p class="max-w-2xl text-lg text-kn-medium/80">
+                                Accede a nuestra colección curada de guías, ejercicios resueltos y apuntes teóricos
+                                organizados por
+                                materia para potenciar tu aprendizaje.
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-12">
+                            <section>
+                                <div class="flex items-center gap-3 mb-6">
+                                    <div class="h-8 w-1.5 rounded-full bg-kn-orange"></div>
+                                    <h2 class="text-2xl font-bold text-kn-dark">Cálculo de una Variable</h2>
+                                </div>
+                                <div class="mb-8">
+                                    <h3 class="mb-4 text-lg font-semibold text-kn-medium flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-kn-orange">functions</span>
+                                        LÍMITES Y CONTINUIDAD
+                                    </h3>
+                                    <div class="relative">
+                                        <div
+                                            class="flex gap-5 overflow-x-auto pb-6 pt-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+                                            <div
+                                                class="group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100">
+                                                <div class="flex items-start justify-between">
+                                                    <div
+                                                        class="flex size-12 items-center justify-center rounded-lg bg-red-50 text-red-500">
+                                                        <span
+                                                            class="material-symbols-outlined icon-filled text-3xl">picture_as_pdf</span>
+                                                    </div>
+                                                    <span
+                                                        class="rounded-full bg-gray-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-600">PDF</span>
+                                                </div>
+                                                <div>
+                                                    <h4
+                                                        class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                        Teorema del Valor Medio</h4>
+                                                    <p class="text-sm leading-relaxed text-gray-500">Explicación teórica
+                                                        detallada
+                                                        con demostraciones gráficas y ejemplos prácticos.</p>
+                                                </div>
+                                                <div class="mt-auto pt-2">
+                                                    <button
+                                                        class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                        Ver documento <span
+                                                            class="material-symbols-outlined text-base">arrow_forward</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100">
+                                                <div class="flex items-start justify-between">
+                                                    <div
+                                                        class="flex size-12 items-center justify-center rounded-lg bg-red-50 text-red-500">
+                                                        <span
+                                                            class="material-symbols-outlined icon-filled text-3xl">picture_as_pdf</span>
+                                                    </div>
+                                                    <span
+                                                        class="rounded-full bg-gray-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-600">PDF</span>
+                                                </div>
+                                                <div>
+                                                    <h4
+                                                        class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                        Ejercicios de Límites</h4>
+                                                    <p class="text-sm leading-relaxed text-gray-500">Colección de 50
+                                                        problemas
+                                                        resueltos paso a paso sobre límites indeterminados.</p>
+                                                </div>
+                                                <div class="mt-auto pt-2">
+                                                    <button
+                                                        class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                        Ver documento <span
+                                                            class="material-symbols-outlined text-base">arrow_forward</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100">
+                                                <div class="flex items-start justify-between">
+                                                    <div
+                                                        class="flex size-12 items-center justify-center rounded-lg bg-red-50 text-red-500">
+                                                        <span
+                                                            class="material-symbols-outlined icon-filled text-3xl">picture_as_pdf</span>
+                                                    </div>
+                                                    <span
+                                                        class="rounded-full bg-gray-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-600">PDF</span>
+                                                </div>
+                                                <div>
+                                                    <h4
+                                                        class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                        Continuidad y Discontinuidad</h4>
+                                                    <p class="text-sm leading-relaxed text-gray-500">Guía rápida para
+                                                        identificar
+                                                        tipos de discontinuidades en funciones.</p>
+                                                </div>
+                                                <div class="mt-auto pt-2">
+                                                    <button
+                                                        class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                        Ver documento <span
+                                                            class="material-symbols-outlined text-base">arrow_forward</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="mb-4 text-lg font-semibold text-kn-medium flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-kn-orange">show_chart</span>
+                                        DERIVADAS Y SUS APLICACIONES
+                                    </h3>
+                                    <div class="relative">
+                                        <div
+                                            class="flex gap-5 overflow-x-auto pb-6 pt-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+                                            <div
+                                                class="group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100">
+                                                <div class="flex items-start justify-between">
+                                                    <div
+                                                        class="flex size-12 items-center justify-center rounded-lg bg-red-50 text-red-500">
+                                                        <span
+                                                            class="material-symbols-outlined icon-filled text-3xl">picture_as_pdf</span>
+                                                    </div>
+                                                    <span
+                                                        class="rounded-full bg-gray-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-600">PDF</span>
+                                                </div>
+                                                <div>
+                                                    <h4
+                                                        class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                        Reglas de Derivación</h4>
+                                                    <p class="text-sm leading-relaxed text-gray-500">Formulario completo
+                                                        con las
+                                                        reglas básicas y trascendentes.</p>
+                                                </div>
+                                                <div class="mt-auto pt-2">
+                                                    <button
+                                                        class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                        Ver documento <span
+                                                            class="material-symbols-outlined text-base">arrow_forward</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100">
+                                                <div class="flex items-start justify-between">
+                                                    <div
+                                                        class="flex size-12 items-center justify-center rounded-lg bg-red-50 text-red-500">
+                                                        <span
+                                                            class="material-symbols-outlined icon-filled text-3xl">picture_as_pdf</span>
+                                                    </div>
+                                                    <span
+                                                        class="rounded-full bg-gray-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-600">PDF</span>
+                                                </div>
+                                                <div>
+                                                    <h4
+                                                        class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                        Optimización</h4>
+                                                    <p class="text-sm leading-relaxed text-gray-500">Problemas de
+                                                        máximos y mínimos
+                                                        aplicados a situaciones reales.</p>
+                                                </div>
+                                                <div class="mt-auto pt-2">
+                                                    <button
+                                                        class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                        Ver documento <span
+                                                            class="material-symbols-outlined text-base">arrow_forward</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section>
+                                <div class="flex items-center gap-3 mb-6 pt-4 border-t border-gray-200">
+                                    <div class="h-8 w-1.5 rounded-full bg-kn-orange"></div>
+                                    <h2 class="text-2xl font-bold text-kn-dark">Física</h2>
+                                </div>
+                                <div class="mb-8">
+                                    <h3 class="mb-4 text-lg font-semibold text-kn-medium flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-kn-orange">speed</span>
+                                        Cinemática
+                                    </h3>
+                                    <div class="relative">
+                                        <div
+                                            class="flex gap-5 overflow-x-auto pb-6 pt-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+                                            <div
+                                                class="group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100">
+                                                <div class="flex items-start justify-between">
+                                                    <div
+                                                        class="flex size-12 items-center justify-center rounded-lg bg-red-50 text-red-500">
+                                                        <span
+                                                            class="material-symbols-outlined icon-filled text-3xl">picture_as_pdf</span>
+                                                    </div>
+                                                    <span
+                                                        class="rounded-full bg-gray-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-600">PDF</span>
+                                                </div>
+                                                <div>
+                                                    <h4
+                                                        class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                        Formulario MRU y MRUA</h4>
+                                                    <p class="text-sm leading-relaxed text-gray-500">Todas las fórmulas
+                                                        esenciales
+                                                        para movimiento rectilíneo.</p>
+                                                </div>
+                                                <div class="mt-auto pt-2">
+                                                    <button
+                                                        class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                        Ver documento <span
+                                                            class="material-symbols-outlined text-base">arrow_forward</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100">
+                                                <div class="flex items-start justify-between">
+                                                    <div
+                                                        class="flex size-12 items-center justify-center rounded-lg bg-red-50 text-red-500">
+                                                        <span
+                                                            class="material-symbols-outlined icon-filled text-3xl">picture_as_pdf</span>
+                                                    </div>
+                                                    <span
+                                                        class="rounded-full bg-gray-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-600">PDF</span>
+                                                </div>
+                                                <div>
+                                                    <h4
+                                                        class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                        Caída Libre y Tiro Vertical</h4>
+                                                    <p class="text-sm leading-relaxed text-gray-500">Ejercicios y teoría
+                                                        sobre el
+                                                        movimiento bajo gravedad.</p>
+                                                </div>
+                                                <div class="mt-auto pt-2">
+                                                    <button
+                                                        class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                        Ver documento <span
+                                                            class="material-symbols-outlined text-base">arrow_forward</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="mb-4 text-lg font-semibold text-kn-medium flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-kn-orange">science</span>
+                                        Dinámica
+                                    </h3>
+                                    <div class="relative">
+                                        <div
+                                            class="flex gap-5 overflow-x-auto pb-6 pt-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+                                            <div
+                                                class="group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100">
+                                                <div class="flex items-start justify-between">
+                                                    <div
+                                                        class="flex size-12 items-center justify-center rounded-lg bg-red-50 text-red-500">
+                                                        <span
+                                                            class="material-symbols-outlined icon-filled text-3xl">picture_as_pdf</span>
+                                                    </div>
+                                                    <span
+                                                        class="rounded-full bg-gray-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-600">PDF</span>
+                                                </div>
+                                                <div>
+                                                    <h4
+                                                        class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                        Las 3 Leyes de Newton</h4>
+                                                    <p class="text-sm leading-relaxed text-gray-500">Guía teórica con
+                                                        ejemplos de la
+                                                        vida cotidiana y aplicaciones.</p>
+                                                </div>
+                                                <div class="mt-auto pt-2">
+                                                    <button
+                                                        class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                        Ver documento <span
+                                                            class="material-symbols-outlined text-base">arrow_forward</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100">
+                                                <div class="flex items-start justify-between">
+                                                    <div
+                                                        class="flex size-12 items-center justify-center rounded-lg bg-red-50 text-red-500">
+                                                        <span
+                                                            class="material-symbols-outlined icon-filled text-3xl">picture_as_pdf</span>
+                                                    </div>
+                                                    <span
+                                                        class="rounded-full bg-gray-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-600">PDF</span>
+                                                </div>
+                                                <div>
+                                                    <h4
+                                                        class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                        Diagramas de Cuerpo Libre</h4>
+                                                    <p class="text-sm leading-relaxed text-gray-500">Manual práctico
+                                                        para dibujar y
+                                                        resolver sistemas de fuerzas.</p>
+                                                </div>
+                                                <div class="mt-auto pt-2">
+                                                    <button
+                                                        class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                        Ver documento <span
+                                                            class="material-symbols-outlined text-base">arrow_forward</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </main>
+                    <footer class="flex flex-col gap-6 px-5 py-10 text-center mt-12 border-t border-gray-200">
+                        <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="dashboardP.html">Inicio</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="materias.html">Materias</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="recursos.html">Recursos</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="servicios.html">Planes</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="contacto.html">Contacto</a>
+                            <a class="nav-link text-azul-medio hover:text-naranja transition-colors cursor-pointer"
+                                data-page="perfil.html">Mi Perfil</a>
+                        </div>
+                        <p class="text-azul-medio text-sm">© 2024 KnowNet. Todos los derechos reservados.</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="src/js/dashboardP.js"></script>
+
+</body>
+
+</html>

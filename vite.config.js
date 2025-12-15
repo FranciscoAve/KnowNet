@@ -21,6 +21,7 @@ export default defineConfig({
         perfil: resolve(__dirname, 'perfil.html'),
         recursos_profesor: resolve(__dirname, 'recursos_profesor.html'),
         recursos_profesor_fisica: resolve(__dirname, 'recursos_profesorFisica.html'),
+        apuntes: resolve(__dirname, 'apuntes.html'),
         // mas páginas HTML aquí
       }
     }
