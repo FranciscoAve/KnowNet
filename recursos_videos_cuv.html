@@ -16,6 +16,13 @@
             theme: {
                 extend: {
                     colors: {
+                        kn: {
+                            dark: "#0F2947",   // Azul oscuro
+                            medium: "#1E3A5F", // Azul medio
+                            orange: "#FF8C42", // Naranja
+                            bg: "#F5F5F5",     // Fondo general
+                            white: "#FFFFFF",  // Blanco componentes
+                        },
                         "azul-oscuro": "#0F2947",
                         "azul-medio": "#1E3A5F",
                         "naranja": "#FF8C42",
@@ -120,287 +127,559 @@
                     <!-- Main Content -->
                     <main class="flex-grow">
                         <div class="flex flex-col gap-8 md:gap-10">
-
                             <!-- Page Header -->
-                            <div class="flex flex-col gap-3 px-2 sm:px-4">
-                                <h1
-                                    class="text-3xl sm:text-4xl font-black tracking-tighter text-azul-oscuro dark:text-text-dark-primary">
-                                    Cálculo de una Variable
-                                </h1>
-                                <p
-                                    class="text-sm sm:text-base font-normal text-azul-medio dark:text-text-dark-secondary">
-                                    Explora nuestra biblioteca de recursos audiovisuales para reforzar tus
-                                    conocimientos.
+                            <div class="mb-10 flex flex-col gap-4 border-b border-gray-200 pb-8">
+                                <h1 class="text-3xl font-bold tracking-tight text-kn-dark md:text-5xl">Videos de
+                                    Estudio</h1>
+                                <p class="max-w-2xl text-lg text-kn-medium/80">
+                                    Accede a nuestra colección curada de vídeos educativos
+                                    organizados por
+                                    materia para potenciar tu aprendizaje.
                                 </p>
                             </div>
 
                             <!-- Videos Sections -->
-                            <div class="flex flex-col gap-8">
+                            <div class="flex flex-col gap-12">
 
-                                <!-- Section 1: LÍMITES Y CONTINUIDAD -->
+                                <!-- Section 1: Calculo -->
                                 <section>
-                                    <h2
-                                        class="text-xl sm:text-2xl font-bold tracking-tight text-azul-oscuro dark:text-text-dark-primary px-2 sm:px-4 pb-3 pt-5">
-                                        1. LÍMITES Y CONTINUIDAD
-                                    </h2>
-                                    <div class="relative px-2 sm:px-4">
-                                        <div
-                                            class="flex gap-3 sm:gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-
-                                            <!-- Video Card 1 -->
-                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
-                                                data-youtube-id="mBRxY5cu33Q">
-                                                <div
-                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
-                                                    <img src="https://img.youtube.com/vi/mBRxY5cu33Q/mqdefault.jpg"
-                                                        alt="Introducción a los Límites"
-                                                        class="w-full h-full object-cover">
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <div class="h-8 w-1.5 rounded-full bg-kn-orange"></div>
+                                        <h2 class="text-2xl font-bold text-kn-dark">Cálculo de una Variable</h2>
+                                    </div>
+                                    <div class="mb-8">
+                                        <h3 class="mb-4 text-lg font-semibold text-kn-medium flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-kn-orange">functions</span>
+                                            LÍMITES Y CONTINUIDAD
+                                        </h3>
+                                        <div class="relative">
+                                            <div
+                                                class="flex gap-5 overflow-x-auto pb-6 pt-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="mBRxY5cu33Q">
                                                     <div
-                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <span
-                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/mBRxY5cu33Q/mqdefault.jpg"
+                                                            alt="Introducción y espacios métricos"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Introducción y espacios métricos</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Fundamentos de
+                                                            límites y
+                                                            espacios métricos con ejemplos ilustrativos.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">02:07:45</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div class="flex flex-col gap-1">
-                                                    <p
-                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
-                                                        Introducción y espacios métricos</p>
-                                                    <p
-                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
-                                                        02:07:45</p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Video Card 2 -->
-                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
-                                                data-youtube-id="f7y5jSWD9dc">
-                                                <div
-                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
-                                                    <img src="https://img.youtube.com/vi/f7y5jSWD9dc/mqdefault.jpg"
-                                                        alt="Definición formal del límite"
-                                                        class="w-full h-full object-cover">
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="f7y5jSWD9dc">
                                                     <div
-                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <span
-                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/f7y5jSWD9dc/mqdefault.jpg"
+                                                            alt="Definición formal del límite"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Definición formal del límite</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Explicación
+                                                            rigurosa de la
+                                                            definición epsilon-delta de límites.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">01:44:34</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div class="flex flex-col gap-1">
-                                                    <p
-                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
-                                                        Definición formal del límite</p>
-                                                    <p
-                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
-                                                        01:44:34</p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Video Card 3 -->
-                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
-                                                data-youtube-id="-oAg599xThE">
-                                                <div
-                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
-                                                    <img src="https://img.youtube.com/vi/-oAg599xThE/mqdefault.jpg"
-                                                        alt="Límites laterales y gráficos"
-                                                        class="w-full h-full object-cover">
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="-oAg599xThE">
                                                     <div
-                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <span
-                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/-oAg599xThE/mqdefault.jpg"
+                                                            alt="Límites laterales y gráficos"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Límites laterales y gráficos</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Análisis de
+                                                            límites por la
+                                                            izquierda y derecha con representación gráfica.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">01:13:58</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div class="flex flex-col gap-1">
-                                                    <p
-                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
-                                                        Límites laterales y gráficos</p>
-                                                    <p
-                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
-                                                        01:13:58</p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Video Card 4 -->
-                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
-                                                data-youtube-id="VTsP_R_XS0o">
-                                                <div
-                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
-                                                    <img src="https://img.youtube.com/vi/VTsP_R_XS0o/mqdefault.jpg"
-                                                        alt="Límites algebraicos" class="w-full h-full object-cover">
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="UjBPZPul58Y">
                                                     <div
-                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <span
-                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/UjBPZPul58Y/mqdefault.jpg"
+                                                            alt="Continuidad" class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Continuidad</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Estudio de
+                                                            funciones continuas
+                                                            y tipos de discontinuidades.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">01:01:21</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div class="flex flex-col gap-1">
-                                                    <p
-                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
-                                                        Límites algebraicos</p>
-                                                    <p
-                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
-                                                        01:44:05</p>
-                                                </div>
                                             </div>
-
-                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
-                                                data-youtube-id="UjBPZPul58Y">
-                                                <div
-                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
-                                                    <img src="https://img.youtube.com/vi/UjBPZPul58Y/mqdefault.jpg"
-                                                        alt="Continuidad" class="w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="mb-4 text-lg font-semibold text-kn-medium flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-kn-orange">show_chart</span>
+                                            DERIVADAS Y SUS APLICACIONES
+                                        </h3>
+                                        <div class="relative">
+                                            <div
+                                                class="flex gap-5 overflow-x-auto pb-6 pt-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="ifVtYnvCjRo">
                                                     <div
-                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <span
-                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/ifVtYnvCjRo/mqdefault.jpg"
+                                                            alt="Introducción y derivadas por definición"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Introducción y derivadas por definición</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Concepto
+                                                            fundamental de derivada
+                                                            y su aplicación desde la definición.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">01:35:20</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div class="flex flex-col gap-1">
-                                                    <p
-                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
-                                                        Continuidad</p>
-                                                    <p
-                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
-                                                        01:01:21</p>
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="NzkICsMBfVA">
+                                                    <div
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/NzkICsMBfVA/mqdefault.jpg"
+                                                            alt="Reglas y propiedades de la derivada"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Reglas y propiedades de la derivada</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Técnicas
+                                                            esenciales para
+                                                            derivar funciones de manera eficiente.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">01:58:07</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="U8rldJ2PDVw">
+                                                    <div
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/U8rldJ2PDVw/mqdefault.jpg"
+                                                            alt="Regla de la cadena" class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Regla de la cadena</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Derivación de
+                                                            funciones
+                                                            compuestas con ejemplos prácticos.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">01:01:43</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="iJS23HIoY34">
+                                                    <div
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/iJS23HIoY34/mqdefault.jpg"
+                                                            alt="Derivadas de orden superior"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Derivadas de orden superior</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Derivadas
+                                                            sucesivas de una función, obtenidas al derivar la derivada
+                                                            anterior.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">01:02:01</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
 
+                                            </div>
                                         </div>
                                     </div>
                                 </section>
 
-                                <!-- Section 2: DERIVADAS Y SUS APLICACIONES -->
+
+                                <!-- Section2: fisica -->
                                 <section>
-                                    <h2
-                                        class="text-xl sm:text-2xl font-bold tracking-tight text-azul-oscuro dark:text-text-dark-primary px-2 sm:px-4 pb-3 pt-5">
-                                        2. DERIVADAS Y SUS APLICACIONES
-                                    </h2>
-                                    <div class="relative px-2 sm:px-4">
-                                        <div
-                                            class="flex gap-3 sm:gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-
-                                            <!-- Video Cards similares... -->
-                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
-                                                data-youtube-id="ifVtYnvCjRo">
-                                                <div
-                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
-                                                    <img src="https://img.youtube.com/vi/ifVtYnvCjRo/mqdefault.jpg"
-                                                        alt="Introducción y derivadas por definición"
-                                                        class="w-full h-full object-cover">
+                                    <div class="flex items-center gap-3 mb-6 pt-4 border-t border-gray-200">
+                                        <div class="h-8 w-1.5 rounded-full bg-kn-orange"></div>
+                                        <h2 class="text-2xl font-bold text-kn-dark">Física</h2>
+                                    </div>
+                                    <div class="mb-8">
+                                        <h3 class="mb-4 text-lg font-semibold text-kn-medium flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-kn-orange">speed</span>
+                                            CINEMÁTICA
+                                        </h3>
+                                        <div class="relative">
+                                            <div
+                                                class="flex gap-5 overflow-x-auto pb-6 pt-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="XE9UXxtep6M">
                                                     <div
-                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <span
-                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/XE9UXxtep6M/mqdefault.jpg"
+                                                            alt="Movimiento Rectilíneo Uniforme"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Movimiento Rectilíneo Uniforme</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Conceptos
+                                                            fundamentales de MRU: velocidad constante y ecuaciones de
+                                                            posición.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">00:15:37</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div class="flex flex-col gap-1">
-                                                    <p
-                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
-                                                        Introducción y derivadas por definición</p>
-                                                    <p
-                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
-                                                        01:35:20</p>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
-                                                data-youtube-id="NzkICsMBfVA">
-                                                <div
-                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
-                                                    <img src="https://img.youtube.com/vi/NzkICsMBfVA/mqdefault.jpg"
-                                                        alt="Reglas y propiedades de la derivada"
-                                                        class="w-full h-full object-cover">
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="94-W8kiAmCg">
                                                     <div
-                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <span
-                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/94-W8kiAmCg/mqdefault.jpg"
+                                                            alt="Movimiento Rectilíneo Uniformemente Acelerado"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Movimiento Rectilíneo Uniformemente Acelerado</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">MRUA:
+                                                            aceleración constante, ecuaciones cinemáticas y gráficos
+                                                            v-t.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">00:08:36</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div class="flex flex-col gap-1">
-                                                    <p
-                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
-                                                        Reglas y propiedades de la derivada</p>
-                                                    <p
-                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
-                                                        01:58:07</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
-                                                data-youtube-id="U8rldJ2PDVw">
-                                                <div
-                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
-                                                    <img src="https://img.youtube.com/vi/U8rldJ2PDVw/mqdefault.jpg"
-                                                        alt="Regla de la cadena"
-                                                        class="w-full h-full object-cover">
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="yvz40RrLrkM">
                                                     <div
-                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <span
-                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/yvz40RrLrkM/mqdefault.jpg"
+                                                            alt="Caída Libre y Tiro Vertical"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Caída Libre y Tiro Vertical</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Movimiento bajo
+                                                            la gravedad: caída libre, tiro hacia arriba y problemas
+                                                            resueltos.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">00:10:08</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div class="flex flex-col gap-1">
-                                                    <p
-                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
-                                                        Regla de la cadena</p>
-                                                    <p
-                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
-                                                        01:01:43</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
-                                                data-youtube-id="iJS23HIoY34">
-                                                <div
-                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
-                                                    <img src="https://img.youtube.com/vi/iJS23HIoY34/mqdefault.jpg"
-                                                        alt="Derivadas de orden superior"
-                                                        class="w-full h-full object-cover">
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="vFMHr1Jg8IA">
                                                     <div
-                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <span
-                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/vFMHr1Jg8IA/mqdefault.jpg"
+                                                            alt="Movimiento Parabólico"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Movimiento Parabólico</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Tiro
+                                                            parabólico: componentes horizontal y vertical, alcance y
+                                                            altura máxima.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">00:09:43</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div class="flex flex-col gap-1">
-                                                    <p
-                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
-                                                        Derivadas de orden superior</p>
-                                                    <p
-                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
-                                                        01:02:01</p>
-                                                </div>
                                             </div>
-
-                                            <div class="video-card flex-shrink-0 w-[240px] sm:w-[260px] flex flex-col gap-3 rounded-lg bg-white dark:bg-surface-dark p-3 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 snap-start cursor-pointer"
-                                                data-youtube-id="ELJZlIh7Cok">
-                                                <div
-                                                    class="video-thumbnail w-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg relative group overflow-hidden">
-                                                    <img src="https://img.youtube.com/vi/ELJZlIh7Cok/mqdefault.jpg"
-                                                        alt="Derivación implícita"
-                                                        class="w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="mb-4 text-lg font-semibold text-kn-medium flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-kn-orange">science</span>
+                                            DINÁMICA
+                                        </h3>
+                                        <div class="relative">
+                                            <div
+                                                class="flex gap-5 overflow-x-auto pb-6 pt-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="kKKM8Y-u7ds">
                                                     <div
-                                                        class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <span
-                                                            class="material-symbols-outlined text-white text-5xl sm:text-6xl">play_circle</span>
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/kKKM8Y-u7ds/mqdefault.jpg"
+                                                            alt="Primera Ley de Newton"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Primera Ley de Newton - Inercia</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Ley de inercia:
+                                                            los cuerpos mantienen su estado de reposo o movimiento
+                                                            uniforme.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">00:32:18</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div class="flex flex-col gap-1">
-                                                    <p
-                                                        class="font-medium text-sm sm:text-base text-azul-oscuro dark:text-text-dark-primary line-clamp-2">
-                                                        Derivación implícita</p>
-                                                    <p
-                                                        class="text-xs sm:text-sm text-azul-medio dark:text-text-dark-secondary">
-                                                        01:23:59</p>
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="9ME24MjqMrg">
+                                                    <div
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/9ME24MjqMrg/mqdefault.jpg"
+                                                            alt="Segunda Ley de Newton"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Segunda Ley de Newton - F=ma</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Relación entre
+                                                            fuerza, masa y aceleración con ejemplos prácticos resueltos.
+                                                        </p>
+                                                        <p class="text-xs text-gray-400 mt-2">00:05:56</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="ttPdmwVuaXI">
+                                                    <div
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/ttPdmwVuaXI/mqdefault.jpg"
+                                                            alt="Tercera Ley de Newton"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Tercera Ley de Newton - Acción y Reacción</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Principio de
+                                                            acción y reacción: fuerzas entre dos cuerpos son iguales y
+                                                            opuestas.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">00:02:49</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="video-card group flex h-full min-w-[280px] w-[280px] flex-col gap-4 rounded-xl bg-kn-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-hover border border-transparent hover:border-gray-100 cursor-pointer"
+                                                    data-youtube-id="D7q3lxVw1E0">
+                                                    <div
+                                                        class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                                                        <img src="https://img.youtube.com/vi/D7q3lxVw1E0/mqdefault.jpg"
+                                                            alt="Diagramas de Cuerpo Libre"
+                                                            class="w-full h-full object-cover">
+                                                        <div
+                                                            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            <span
+                                                                class="material-symbols-outlined icon-filled text-white text-6xl">play_circle</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="mb-1 text-lg font-bold text-kn-dark group-hover:text-kn-orange transition-colors">
+                                                            Diagramas de Cuerpo Libre</h4>
+                                                        <p class="text-sm leading-relaxed text-gray-500">Cómo dibujar
+                                                            DCL correctamente y resolver problemas de equilibrio y
+                                                            dinámica.</p>
+                                                        <p class="text-xs text-gray-400 mt-2">02:19:11</p>
+                                                    </div>
+                                                    <div class="mt-auto pt-2">
+                                                        <button
+                                                            class="text-sm font-semibold text-kn-medium hover:text-kn-orange flex items-center gap-1 transition-colors">
+                                                            Ver video <span
+                                                                class="material-symbols-outlined text-base">play_arrow</span>
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
-
-
-
                                         </div>
                                     </div>
                                 </section>
-
                             </div>
                         </div>
                     </main>
